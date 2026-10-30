@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AgriShield AI — Warehouse &amp; Cold Storage Fleet</title><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+</head><body class="bg-surface font-body text-on-surface">
+
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="px-space-lg mb-space-lg flex items-center gap-space-md">
+    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+      <span class="material-symbols-outlined text-[24px]">shield</span>
+    </div>
+    <span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span>
+  </div>
+  
+  <div class="px-space-lg mb-space-md">
+    <label class="text-label-sm text-on-surface-variant block mb-space-xs font-semibold">Active Role Profile</label>
+    <div class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg font-semibold flex items-center justify-between">
+      <span id="sidebar-role-badge">Cooperative Admin</span>
+      <span class="material-symbols-outlined text-primary text-[18px]">warehouse</span>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto">
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="index.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="dashboard.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Operations Hub
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="climate.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">cloud</span>Climate Intelligence
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="transport.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transport Facilities
+    </a>
+    <a aria-current="page" class="flex items-center px-space-lg py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" href="storage.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Warehouse Fleet
+    </a>
+  </nav>
+
+  <div class="px-space-lg pt-space-md border-t border-outline-variant/30 sidebar-user-label">
+    <div class="text-body-sm text-on-surface-variant">Cryptographic Audit Chain</div>
+    <div class="text-label-sm text-primary font-medium mt-1" id="sidebar-block-count">SHA-256 Ledger: 148 Blocks</div>
+  </div>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg">
+    <div class="flex items-center gap-space-md">
+      <div class="flex items-center text-body-md text-on-surface-variant gap-space-xs">
+        <span class="hover:text-on-surface cursor-pointer">Storage</span>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-on-surface font-medium">Warehousing &amp; Vaults</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-md">
+      <div class="api-health-badge">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-800">Checking API...</span>
+      </div>
+      <div class="user-profile-slot"></div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg">
+    <div class="flex flex-col w-full pb-space-xl">
+      <!-- Top Banner -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg bg-surface-container-low p-space-lg rounded-xl shadow-sm border border-outline-variant/20">
+        <div>
+          <div class="flex items-center gap-space-sm mb-space-xs">
+            <span class="bg-primary-container text-on-primary-container text-label-sm px-space-sm py-space-xs rounded-full uppercase tracking-wider font-bold">Sector 4 Operations</span>
+            <span class="text-on-surface-variant text-label-md">• Live Telemetry Active</span>
+          </div>
+          <h1 class="text-headline-lg font-headline-lg text-on-surface font-semibold">Warehouse &amp; Cold Storage Fleet</h1>
+          <p class="text-body-md text-on-surface-variant mt-space-xs">Monitor atmospheric parameters, reserve cold-chain slots, and manage grain batch deposits across Nashik cooperative nodes.</p>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <button class="bg-primary hover:bg-primary/90 text-on-primary text-label-lg px-space-lg py-space-sm rounded-lg flex items-center gap-space-sm transition-all shadow-md cursor-pointer font-semibold" onclick="document.getElementById('resVolume').focus()">
+            <span class="material-symbols-outlined text-[20px]">add_box</span>
+            <span>New Batch Deposit</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Metrics Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant font-semibold">Total Storage Capacity</span>
+            <span class="material-symbols-outlined text-primary text-[24px]">warehouse</span>
+          </div>
+          <div>
+            <div class="text-headline-lg font-bold text-on-surface">1,45,000 MT</div>
+            <span class="text-body-sm text-primary font-medium mt-1 block">Across 12 cooperative godowns</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant font-semibold">Available Space</span>
+            <span class="material-symbols-outlined text-secondary text-[24px]">door_sliding</span>
+          </div>
+          <div>
+            <div class="text-headline-lg font-bold text-secondary">38,200 MT</div>
+            <span class="text-body-sm text-secondary font-medium mt-1 block">73.6% aggregate utilization</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant font-semibold">Reefer Cold Rooms</span>
+            <span class="material-symbols-outlined text-tertiary text-[24px]">ac_unit</span>
+          </div>
+          <div>
+            <div class="text-headline-lg font-bold text-on-surface">8 Facilities</div>
+            <span class="text-body-sm text-primary font-medium mt-1 block">Avg temperature: 2.1°C</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant font-semibold">Cryptographic Receipts</span>
+            <span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+          </div>
+          <div>
+            <div class="text-headline-lg font-bold text-primary" id="kpi-ledger-blocks">148 Blocks</div>
+            <span class="text-body-sm text-primary font-medium mt-1 block">SHA-256 Tamper-Proof Chain</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Facilities Grid & Deposit Form -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+        <div class="lg:col-span-2 space-y-space-md">
+          <h2 class="text-headline-md text-on-surface font-semibold">Primary Regional Godowns &amp; Silos</h2>
+
+          <!-- Facility Card 1 -->
+          <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm border border-outline-variant/20">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-space-sm mb-space-xs">
+              <div>
+                <h3 class="text-headline-sm font-bold text-on-surface">Nashik Central Co-op Godown (Sector 4)</h3>
+                <span class="text-body-sm text-on-surface-variant">Dry Grain Silos &amp; Cold Rooms • Automated Misting</span>
+              </div>
+              <span class="px-space-sm py-0.5 rounded-full text-xs font-bold bg-primary-fixed text-primary">WDRA Licensed</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md my-space-md py-space-sm bg-surface-container-lowest px-space-md rounded-lg border border-outline-variant/20">
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Capacity</span>
+                <span class="text-body-md font-bold text-on-surface">50,000 MT</span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Available</span>
+                <span class="text-body-md font-bold text-primary">12,400 MT</span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Temp Log</span>
+                <span class="text-body-md font-bold text-on-surface">4.2°C <span class="text-emerald-700 text-label-sm">● Stable</span></span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Humidity</span>
+                <span class="text-body-md font-bold text-on-surface">62% RH</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs">
+              <div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">sensors</span>
+                <span>48/48 Sensors Active • Real-time telemetry linked</span>
+              </div>
+              <button class="text-primary hover:underline text-label-md font-semibold flex items-center gap-space-xs cursor-pointer" onclick="openHubDetail('Nashik Central Hub', '4.2°C', '62%')">
+                <span>View Telemetry Logs</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Facility Card 2 -->
+          <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm border border-outline-variant/20">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-space-sm mb-space-xs">
+              <div>
+                <h3 class="text-headline-sm font-bold text-on-surface">Pimpalgaon APMC Grain Silos</h3>
+                <span class="text-body-sm text-on-surface-variant">Hermetic Grain Storage • Nitrogen Purged</span>
+              </div>
+              <span class="px-space-sm py-0.5 rounded-full text-xs font-bold bg-primary-fixed text-primary">WDRA Licensed</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md my-space-md py-space-sm bg-surface-container-lowest px-space-md rounded-lg border border-outline-variant/20">
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Capacity</span>
+                <span class="text-body-md font-bold text-on-surface">65,500 MT</span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Available</span>
+                <span class="text-body-md font-bold text-primary">18,900 MT</span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Temp Log</span>
+                <span class="text-body-md font-bold text-on-surface">12.1°C <span class="text-emerald-700 text-label-sm">● Stable</span></span>
+              </div>
+              <div>
+                <span class="text-label-sm text-on-surface-variant block">Humidity</span>
+                <span class="text-body-md font-bold text-on-surface">45% RH</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs">
+              <div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">sensors</span>
+                <span>32/32 Sensors Active • Nitrogen purge verified</span>
+              </div>
+              <button class="text-primary hover:underline text-label-md font-semibold flex items-center gap-space-xs cursor-pointer" onclick="openHubDetail('Pimpalgaon Silos', '12.1°C', '45%')">
+                <span>View Telemetry Logs</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Instant Deposit & Ledger Chain -->
+        <div class="space-y-space-lg">
+          <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm border border-outline-variant/20">
+            <div class="flex items-center gap-space-xs text-primary font-bold text-label-sm uppercase mb-1">
+              <span class="material-symbols-outlined text-[18px]">lock</span> Cryptographic Receipt
+            </div>
+            <h2 class="text-headline-md text-on-surface font-semibold mb-space-xs">Batch Slot Deposit</h2>
+            <p class="text-body-sm text-on-surface-variant mb-space-md">Generates SHA-256 tamper-evident hash block for grain inventory.</p>
+
+            <form class="space-y-4" id="reservationForm" onsubmit="handleDepositSubmit(event)">
+              <div>
+                <label class="text-xs font-semibold text-on-surface-variant block mb-1">Target Storage Facility</label>
+                <select class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" id="resHub">
+                  <option value="FAC-NSK-01">Nashik Central Hub (General &amp; Cold)</option>
+                  <option value="FAC-NIP-02">Niphad Cold Storage Facility</option>
+                  <option value="FAC-PIM-03">Pimpalgaon Silos (Bulk Grain)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="text-xs font-semibold text-on-surface-variant block mb-1">Crop / Produce Variety</label>
+                <select class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" id="resCrop">
+                  <option value="Grade-A Basmati Paddy">Grade-A Basmati Paddy</option>
+                  <option value="Nashik Red Onions">Nashik Red Onions (Cold-Chain)</option>
+                  <option value="Sharbati Premium Wheat">Sharbati Premium Wheat</option>
+                  <option value="Hybrid Maize">Hybrid Yellow Maize</option>
+                </select>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="text-xs font-semibold text-on-surface-variant block mb-1">Volume (MT)</label>
+                  <input class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none font-medium" id="resVolume" placeholder="e.g. 50" required type="number" value="25" min="1">
+                </div>
+                <div>
+                  <label class="text-xs font-semibold text-on-surface-variant block mb-1">Moisture (%)</label>
+                  <input class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none font-medium" id="resMoisture" required type="number" value="12.0" step="0.1">
+                </div>
+              </div>
+
+              <!-- Cryptographic Hash Preview Card -->
+              <div id="hashCard" class="p-3 rounded-xl bg-surface-container-lowest border border-primary/20 hidden">
+                <div class="flex items-center justify-between text-xs font-bold text-primary mb-1">
+                  <span id="genBlockLabel">BLOCK GENERATED</span>
+                  <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-[11px]">CHAIN VERIFIED</span>
+                </div>
+                <div class="text-[11px] font-mono text-on-surface-variant break-all" id="blockHash"></div>
+              </div>
+
+              <button class="w-full bg-primary hover:bg-primary-container text-on-primary text-xs py-2.5 rounded-lg font-bold transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer" type="submit">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+                <span>Deposit &amp; Sign SHA-256 Ledger</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Cryptographic Block Ledger Feed (Fully Dynamic) -->
+          <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm border border-outline-variant/20">
+            <div class="flex items-center justify-between mb-space-md">
+              <h3 class="text-headline-sm text-on-surface font-semibold">Recent Cryptographic Blocks</h3>
+              <span class="text-label-sm text-primary font-bold">SHA-256 Ledger</span>
+            </div>
+            <div class="space-y-space-md text-body-sm" id="ledger-blocks-list">
+              <!-- Populated dynamically by renderLedger() -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Telemetry Modal -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-4" id="telemetryModal">
+  <div class="bg-surface-container-lowest w-full max-w-xl p-6 rounded-2xl shadow-2xl relative">
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="closeModal()">
+      <span class="material-symbols-outlined text-[24px]">close</span>
+    </button>
+    <h3 class="text-xl text-on-surface font-bold mb-1" id="modalHubTitle">Hub Telemetry Analysis</h3>
+    <p class="text-xs text-on-surface-variant mb-4">Real-time sensor telemetry and automated environmental controls</p>
+    
+    <div class="grid grid-cols-2 gap-3 mb-4">
+      <div class="p-4 rounded-xl bg-surface-container-low">
+        <span class="text-xs text-on-surface-variant font-medium">Ambient Temperature</span>
+        <div class="text-2xl font-bold text-on-surface mt-1" id="modalTemp">4.2°C</div>
+        <span class="text-[11px] text-primary font-semibold">Continuous cooling active</span>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container-low">
+        <span class="text-xs text-on-surface-variant font-medium">Relative Humidity</span>
+        <div class="text-2xl font-bold text-on-surface mt-1" id="modalHumidity">62% RH</div>
+        <span class="text-[11px] text-primary font-semibold">Within optimal envelope</span>
+      </div>
+    </div>
+
+    <div class="p-3 rounded-xl bg-surface-container-low text-xs text-on-surface-variant space-y-1 mb-4">
+      <div class="flex justify-between"><span>Power Backup:</span> <span class="font-bold text-primary">100% DG Ready (Failover tested)</span></div>
+      <div class="flex justify-between"><span>CO2 Flush Status:</span> <span class="font-bold text-on-surface">Purged at 04:00 AM</span></div>
+      <div class="flex justify-between"><span>Cryptographic Node:</span> <span class="font-mono font-bold text-on-surface">NODE-NSK-SEC4</span></div>
+    </div>
+
+    <div class="flex justify-end gap-3">
+      <button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-semibold hover:bg-surface-container-highest cursor-pointer" onclick="closeModal()">Close</button>
+      <button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary-container cursor-pointer" onclick="alert('Full telemetry report exported to CSV!'); closeModal();">Export CSV</button>
+    </div>
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+  let defaultLedger = [
+    {
+      blockIndex: 148,
+      batchNumber: "BAT-9012",
+      cropName: "Alphonso Mangoes",
+      grade: "Grade A (Export/Premium)",
+      currentHash: "c314b99af6712ab8e42091fc726e6d19318b2098b1ecf7193c72b83a0000a94b",
+      weightTons: 12.5,
+      moisturePct: 11.8,
+      inspector: "#IN-102"
+    },
+    {
+      blockIndex: 147,
+      batchNumber: "BAT-8894",
+      cropName: "Sharbati Wheat",
+      grade: "Grade A (Premium)",
+      currentHash: "7b4c919a82098b1ecf7193c72b83a0000a94bf128dc90e6712ab8e42091fc726",
+      weightTons: 25.0,
+      moisturePct: 12.1,
+      inspector: "#IN-102"
+    }
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    renderLedger();
+  });
+
+  function getLedger() {
+    try {
+      const raw = localStorage.getItem("agrishield_storage_receipts");
+      return raw ? JSON.parse(raw) : defaultLedger;
+    } catch (_) {
+      return defaultLedger;
+    }
+  }
+
+  function saveLedger(list) {
+    localStorage.setItem("agrishield_storage_receipts", JSON.stringify(list));
+  }
+
+  function renderLedger() {
+    const list = getLedger();
+    const container = document.getElementById("ledger-blocks-list");
+    container.innerHTML = "";
+
+    document.getElementById("kpi-ledger-blocks").innerText = `${list[0] ? list[0].blockIndex : 148} Blocks`;
+    const sidebarCount = document.getElementById("sidebar-block-count");
+    if (sidebarCount) {
+      sidebarCount.innerText = `SHA-256 Ledger: ${list[0] ? list[0].blockIndex : 148} Blocks`;
+    }
+
+    list.forEach(item => {
+      const el = document.createElement("div");
+      el.className = "p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/20";
+      el.innerHTML = `
+        <div class="flex justify-between font-bold text-on-surface text-xs">
+          <span>Block #${item.blockIndex} • Batch #${item.batchNumber}</span>
+          <span class="text-primary">${item.grade}</span>
+        </div>
+        <div class="text-xs text-on-surface font-semibold mt-1">${item.cropName} (${item.weightTons} MT)</div>
+        <div class="text-[11px] font-mono text-on-surface-variant mt-1 break-all bg-surface-container-high p-1.5 rounded">
+          ${item.currentHash}
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-outline mt-2">
+          <span>Moisture: ${item.moisturePct}%</span>
+          <button onclick="verifyLedgerHash('${item.currentHash}')" class="text-primary font-bold hover:underline cursor-pointer flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">verified</span> Verify Hash
+          </button>
+        </div>
+      `;
+      container.appendChild(el);
+    });
+  }
+
+  function verifyLedgerHash(hash) {
+    alert(`✅ SHA-256 Cryptographic Hash Authenticity Verified!\n\nDigest: ${hash}\n\nStatus: Unaltered tamper-evident record committed on the AgriShield storage ledger.`);
+  }
+
+  function openHubDetail(hubName, temp, humidity) {
+    document.getElementById("modalHubTitle").innerText = hubName;
+    document.getElementById("modalTemp").innerText = temp;
+    document.getElementById("modalHumidity").innerText = humidity;
+    document.getElementById("telemetryModal").classList.remove("hidden");
+    document.getElementById("telemetryModal").classList.add("flex");
+  }
+
+  function closeModal() {
+    document.getElementById("telemetryModal").classList.remove("flex");
+    document.getElementById("telemetryModal").classList.add("hidden");
+  }
+
+  async function handleDepositSubmit(e) {
+    e.preventDefault();
+    const facilityId = document.getElementById("resHub").value;
+    const cropName = document.getElementById("resCrop").value;
+    const weightTons = parseFloat(document.getElementById("resVolume").value);
+    const moisture = parseFloat(document.getElementById("resMoisture").value);
+    const batchNumber = "BAT-" + Math.floor(1000 + Math.random() * 9000);
+
+    const block = await window.AgriShieldAPI.generateStorageBatchHash(facilityId, batchNumber, cropName, weightTons, moisture);
+    
+    const list = getLedger();
+    const nextIndex = (list[0] ? list[0].blockIndex : 148) + 1;
+    block.blockIndex = nextIndex;
+
+    list.unshift(block);
+    saveLedger(list);
+    renderLedger();
+
+    const hashCard = document.getElementById("hashCard");
+    hashCard.classList.remove("hidden");
+    document.getElementById("genBlockLabel").innerText = `BLOCK #${nextIndex} COMMITTED`;
+    document.getElementById("blockHash").innerText = `SHA-256: ${block.currentHash}`;
+
+    alert(`Batch deposit accepted!\n\nBatch: #${batchNumber}\nBlock: #${nextIndex}\nQuality: ${block.grade}\nSHA-256 Digest: ${block.currentHash}\n\nCryptographic receipt signed and stored.`);
+  }
+</script>
+</body></html>

@@ -2,8 +2,17 @@
 """
 
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from typing import Annotated, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints
+
+try:
+    from pydantic.networks import import_email_validator
+    import_email_validator()
+    from pydantic import EmailStr
+except Exception:
+    # Resilient fallback if email-validator package is not yet installed in virtualenv
+    EmailStr = Annotated[str, StringConstraints(pattern=r"^[^@\s]+@[^@\s]+\.[^@\s]+$", to_lower=True)]
+
 from app.core.permissions import UserRole
 
 

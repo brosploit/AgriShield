@@ -1,0 +1,489 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsXWd2_w3TBMJIr3yrj6mA2veJFYjwL81-56G6hd7WLsDmrjSV2R2MpQxE4gA5Lnd7mzP35eRdtM_8nHG8ZKd8lMLZToRvino6_i_DpY8mICJizW0RCypAyd2fQBbZg0UBc28MfgApVM-t3T0AgPi4gjI6D0CNWJbXyZhmQCOuN4EpQ7Mk8qIbdkch_Yjn0p74qlyi-x_ZTmT0wG_x8CSZfTjwNbqB0QiEGCdgzD2a"><span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span></div><div class="px-space-lg mb-space-md"><label class="text-label-sm text-on-surface-variant block mb-space-xs">Active Role</label><select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none"><option>Farmer</option><option>Buyer</option><option>Transporter</option><option>Cooperative Admin</option><option>Platform Admin</option></select></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-bold py-space-md" data-path="landing-page" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="dashboards" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Dashboards</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="freshness-intelligence" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">eco</span>Freshness Intelligence</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="surplus-marketplace" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">storefront</span>Surplus Marketplace</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="aggregation" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">hub</span>Aggregation</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="buyer-offers" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">local_offer</span>Buyer Offers</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="transportation" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transportation</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="digital-storage" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Digital Storage</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-space-md" data-path="ai-recommendations" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">psychology</span>AI Recommendations</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center text-body-md text-on-surface-variant gap-space-xs"><span class="hover:text-on-surface cursor-pointer">App</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-medium">Overview</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-high text-on-surface pl-10 pr-space-md py-space-xs rounded-lg text-body-sm w-72 outline-none" placeholder="Search telemetry, batches, hubs..." type="text"></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg"><div class="flex flex-col w-full text-on-surface">
+<!-- Hero Section -->
+<section class="relative -mt-16 pt-32 pb-24 px-space-lg bg-gradient-to-br from-surface-container-low via-surface to-surface-container-high overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#004c22 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-md">
+<div class="inline-flex items-center gap-space-xs bg-primary-container/10 px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-primary text-[16px]">eco</span>
+<span class="text-label-md text-primary font-semibold">Next-Gen AgriTech Ecosystem</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Protect Your Harvest.<br>Empower Your Future.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          An intelligent agricultural ecosystem connecting farmers, buyers, transporters and cooperatives to radically reduce post-harvest losses and optimize supply chain transparency.
+        </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-lg px-space-xl py-space-md rounded-lg shadow-md transition-all flex items-center gap-space-sm cursor-pointer" onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})">
+            Explore Platform
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest hover:bg-surface-dim text-on-surface font-label-lg px-space-xl py-space-md rounded-lg transition-all border-none cursor-pointer" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">
+            How It Works
+          </button>
+</div>
+<div class="grid grid-cols-3 gap-space-lg pt-space-md w-full max-w-lg border-t border-outline-variant/20">
+<div>
+<div class="font-headline-lg text-primary">34%</div>
+<div class="font-body-sm text-on-surface-variant">Loss Reduction</div>
+</div>
+<div>
+<div class="font-headline-lg text-primary">$1.4M+</div>
+<div class="font-body-sm text-on-surface-variant">Value Saved</div>
+</div>
+<div>
+<div class="font-headline-lg text-primary">12.5k</div>
+<div class="font-body-sm text-on-surface-variant">Active Farmers</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative w-full h-[460px] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Futuristic high-tech agricultural network graphic showing digital data overlays on lush green crop fields, intelligent sensors, drone surveillance telemetry, and connected supply chain nodes in emerald and mint tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtSQGSMY99KJ9Yx06SYsWArGJeBbRzywQlpb9_xcPAy7pTlABxtbZUZEO27jFmc6-JMiOPi-DDQRUHgf1VDZsjIbdc53j0_5sXfkGHmLlBkSCl6SCB5OXRTnhcpbaIQ3KMsKsASk16XxH5XnHDPOgvh_YHvKc6fANxEfAY5KGGqTptjZQlNK7defmW2oyd_CuoJQLUSbp3ZGkGdc5P5MoZowmsiF-uWK7iHXrD6dUc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-space-lg text-on-primary">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="w-3 h-3 bg-secondary-fixed rounded-full animate-pulse"></span>
+<span class="text-label-sm uppercase tracking-wider text-secondary-fixed">Live Telemetry Active</span>
+</div>
+<div class="font-headline-sm">AI Freshness Index: 98.4% Optimal</div>
+<p class="font-body-sm text-on-primary/80">Batch #AG-8894 verified via computer vision at Silo Hub Alpha.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Agricultural Challenges Section -->
+<section class="py-space-xl px-space-lg bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block">The Crisis in Numbers</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Addressing Structural Gaps in the Agricultural Supply Chain</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Traditional supply chains lose billions of dollars annually due to preventable inefficiencies, untracked storage conditions, and delayed market access.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-error-container text-error flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">trending_down</span>
+</div>
+<div class="font-headline-xl text-error mb-space-xs">14%</div>
+<h3 class="font-headline-sm text-on-surface mb-space-xs">Post-Harvest Loss</h3>
+<p class="font-body-md text-on-surface-variant">Millions of tons of fresh produce spoil between the farm gate and retail shelves due to lack of real-time monitoring and cold chain failures.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-error text-label-md">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span class="">Preventable with AI Vision</span>
+</div>
+</div>
+<div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 text-primary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<div class="font-headline-xl text-primary mb-space-xs">62%</div>
+<h3 class="font-headline-sm text-on-surface mb-space-xs">Market Access Gaps</h3>
+<p class="font-body-md text-on-surface-variant">Smallholder farmers struggle to secure verified wholesale buyers prior to harvest, leading to forced discounted sales or complete crop waste.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-label-md">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Resolved via Surplus Marketplace</span>
+</div>
+</div>
+<div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/20 text-secondary flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">warehouse</span>
+</div>
+<div class="font-headline-xl text-secondary mb-space-xs">85%</div>
+<h3 class="font-headline-sm text-on-surface mb-space-xs">Storage Verification Deficit</h3>
+<p class="font-body-md text-on-surface-variant">Cooperative grain silos and cold storages lack tamper-proof digital telemetry, making inventory financing difficult to secure.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-secondary text-label-md">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Digital Storage Guarantee</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Three Intelligent Solutions Section -->
+<section class="py-space-xl px-space-lg bg-surface" id="solutions">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block">Core Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Our Three Intelligent Solutions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Powered by advanced computer vision, IoT telemetry, and secure decentralized ledger verification.</p>
+</div>
+<!-- Tabbed Showcase -->
+<div class="w-full" x-data="{ activeTab: 1 }">
+<div class="flex justify-center mb-space-xl">
+<div class="inline-flex bg-surface-container-high p-space-xs rounded-xl gap-space-xs">
+<button :class="activeTab === 1 ? 'bg-primary text-on-primary shadow-sm' : 'text-on-surface-variant hover:text-on-surface'" @click="activeTab = 1" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">AI Freshness Assessment</button>
+<button :class="activeTab === 2 ? 'bg-primary text-on-primary shadow-sm' : 'text-on-surface-variant hover:text-on-surface'" @click="activeTab = 2" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Surplus Marketplace</button>
+<button :class="activeTab === 3 ? 'bg-primary text-on-primary shadow-sm' : 'text-on-surface-variant hover:text-on-surface'" @click="activeTab = 3" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Digital Storage Verification</button>
+</div>
+</div>
+<!-- Tab 1 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center bg-surface-container-low p-space-xl rounded-3xl" x-show="activeTab === 1">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-md bg-primary-container/10 px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span class="">Computer Vision Intelligence</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Instant Quality Grading &amp; Shelf-Life Prediction</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Snap a photo of harvested crops using our mobile field app. AgriShield AI instantly analyzes ripeness, blemishes, rot probability, and exact remaining shelf life with 99.2% accuracy.</p>
+<ul class="space-y-space-sm">
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Instant grading against international export standards</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Automated batch certificate generation</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Reduced dispute rates between farmers and buyers</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-6">
+<div class="relative h-[380px] rounded-2xl overflow-hidden shadow-lg bg-surface">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Smartphone held in a sunlit field scanning fresh green tomatoes with digital overlay bounding boxes, confidence score percentage meters, and quality grading indicators in vibrant green and white UI styling." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvbboSUjD0JKr8Wn75wSyrGwyThttmXfGAdwUyE-GI2TGBerya9IGH87L3VAuNocTJtIWidRJPaYZOqRARSP-LvLcKYEMXbvOvKZ55Y4oOUpKPWwvZuu2wkCiDGYOMG_HGPJvKoBUcv4SMUwpAxGtK0o0Y2ik-fb8J2xeGGS-GCS11oHTP_Eby37srIEN-70367ZuPiBzV59penE6xYbSDCwZvQzoxNEqPHeMKcL1O')"></div>
+</div>
+</div>
+</div>
+<!-- Tab 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center bg-surface-container-low p-space-xl rounded-3xl" style="display: none;" x-show="activeTab === 2">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-md bg-primary-container/10 px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="">Direct B2B Matching</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Surplus Marketplace &amp; Aggregation Hub</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Connect verified farmer surplus directly with institutional buyers, supermarket chains, and food processors. Dynamic routing aggregates smallholder harvests into bulk shipments.</p>
+<ul class="space-y-space-sm">
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Real-time geo-located inventory listings</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Smart contract escrow protection for guaranteed payments</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Cooperative pooling for maximum bargaining power</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-6">
+<div class="relative h-[380px] rounded-2xl overflow-hidden shadow-lg bg-surface">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Interactive digital B2B marketplace dashboard displaying live agricultural commodity prices, regional surplus heatmaps, active buyer bids, and bulk order fulfillment progress bars." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA43qmsWrdt0qmvd1jtFt1L1m9QNUQ4cPI4asUxLOopgtS9HZlpemRNIGHGuv5NlNT7s669qNEC5uX9BZG_Mm7pHbF6rV7JRD4d0W1qqhI_n6C59RjLCgK2JBu4kfe56-5eQh2UfYBU72oPF_qraD_WYJuM6mO-HYEgSu3JS51jzO_jKsYT9Qqtb_7tWObv2eByQTxVInd0uiMWNoZzal5gjVTpJv60fpe7vDUp-5tr')"></div>
+</div>
+</div>
+</div>
+<!-- Tab 3 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center bg-surface-container-low p-space-xl rounded-3xl" style="display: none;" x-show="activeTab === 3">
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-space-xs text-primary font-label-md bg-primary-container/10 px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[16px]">warehouse</span>
+<span class="">IoT Telemetry &amp; Ledger</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Digital Storage Verification &amp; Inventory Financing</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Monitor humidity, temperature, and gas levels inside cooperative silos in real-time. Tamper-proof IoT logs enable secure warehouse receipt financing with banking partners.</p>
+<ul class="space-y-space-sm">
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">24/7 continuous IoT silo climate tracking</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Instant collateralized credit issuance from partner banks</span>
+</li>
+<li class="flex items-center gap-space-sm font-body-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="">Automated spoilage risk early warning alerts</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-6">
+<div class="relative h-[380px] rounded-2xl overflow-hidden shadow-lg bg-surface">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Modern high-capacity grain silos equipped with IoT sensor nodes, glowing telemetry dials showing optimal humidity and temperature curves, and digital inventory certificates." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-_jOhYjrlpz_kj9HnT5kfW0q4mF9mX6k198SMRJkYc4AjBgDlBzeL7i3QEjKJvJzISXSaddFW-R3H7YVpB-nxg7nfijluxAa5ZTJkvN-fPvj97IOtPFrBoBCr0BxyywpXY4m-UGI86Nla8j3-Zv_XhfG6pE5oK1jLQ3YWY3MHMxTPy5Zib5tQJnsjbYWIwz5fLZpWSlSKChl9Qgc3Kk8E_5rXwLlb9aMaV2NCxo-a')"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How AgriShield AI Works -->
+<section class="py-space-xl px-space-lg bg-surface-container-low" id="how-it-works">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block">Seamless Workflow</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">From Harvest to Buyer Delivery in 4 Steps</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our end-to-end platform automates quality verification, market matching, and logistics execution.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<div class="bg-surface p-space-lg rounded-2xl shadow-sm flex flex-col justify-between relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shadow-md">1</div>
+<div class="pt-space-sm">
+<div class="text-primary font-label-md uppercase mb-space-xs">Capture &amp; Grade</div>
+<h3 class="font-headline-sm text-on-surface mb-space-sm">AI Freshness Scan</h3>
+<p class="font-body-md text-on-surface-variant">Farmer scans harvested crops in the field with mobile app for instant AI grading and certification.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span class="">Sub-second AI response</span>
+</div>
+</div>
+<div class="bg-surface p-space-lg rounded-2xl shadow-sm flex flex-col justify-between relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shadow-md">2</div>
+<div class="pt-space-sm">
+<div class="text-primary font-label-md uppercase mb-space-xs">Store &amp; Secure</div>
+<h3 class="font-headline-sm text-on-surface mb-space-sm">IoT Silo Verification</h3>
+<p class="font-body-md text-on-surface-variant">Produce is stored in certified digital hubs monitored by continuous climate and inventory telemetry.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="">24/7 telemetry logs</span>
+</div>
+</div>
+<div class="bg-surface p-space-lg rounded-2xl shadow-sm flex flex-col justify-between relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shadow-md">3</div>
+<div class="pt-space-sm">
+<div class="text-primary font-label-md uppercase mb-space-xs">Match &amp; Sell</div>
+<h3 class="font-headline-sm text-on-surface mb-space-sm">Marketplace Listing</h3>
+<p class="font-body-md text-on-surface-variant">Surplus is automatically aggregated and matched with verified B2B buyers through smart contracts.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+<span class="">Guaranteed escrow</span>
+</div>
+</div>
+<div class="bg-surface p-space-lg rounded-2xl shadow-sm flex flex-col justify-between relative">
+<div class="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm shadow-md">4</div>
+<div class="pt-space-sm">
+<div class="text-primary font-label-md uppercase mb-space-xs">Deliver &amp; Track</div>
+<h3 class="font-headline-sm text-on-surface mb-space-sm">Cold Chain Transit</h3>
+<p class="font-body-md text-on-surface-variant">Optimized transporter routing ensures fresh delivery with complete temperature excursion tracking.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-body-sm">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span class="">Real-time GPS tracking</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stakeholder Ecosystem Preview & Role Selector -->
+<section class="py-space-xl px-space-lg bg-surface">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block">Unified Ecosystem</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Tailored Value for Every Stakeholder</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Explore how AgriShield AI transforms operations across the entire agricultural value chain.</p>
+</div>
+<div class="space-y-space-lg" x-data="{ activeRole: 'farmer' }">
+<!-- Role Selector Tabs -->
+<div class="flex justify-center flex-wrap gap-space-sm">
+<button :class="activeRole === 'farmer' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'" @click="activeRole = 'farmer'" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Farmer</button>
+<button :class="activeRole === 'cooperative' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'" @click="activeRole = 'cooperative'" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Cooperative</button>
+<button :class="activeRole === 'buyer' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'" @click="activeRole = 'buyer'" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Buyer</button>
+<button :class="activeRole === 'transporter' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant'" @click="activeRole = 'transporter'" class="px-space-lg py-space-sm rounded-lg font-label-lg transition-all cursor-pointer">Transporter</button>
+</div>
+<!-- Role Content Display -->
+<div class="bg-surface-container-low p-space-xl rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 space-y-space-md">
+<template x-if="activeRole === 'farmer'">
+<div class="space-y-space-md">
+<span class="text-primary font-label-md uppercase bg-primary-container/10 px-space-md py-space-xs rounded-full">For Smallholder &amp; Commercial Farmers</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Maximize Yield Value and Eliminate Post-Harvest Loss</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Get instant AI quality grading in your fields, list surplus produce directly to high-paying buyers, and secure instant warehouse inventory loans.</p>
+<div class="grid grid-cols-2 gap-space-md pt-space-sm">
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">+28%</div>
+<div class="font-body-sm text-on-surface-variant">Average Revenue Increase</div>
+</div>
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">&lt; 10s</div>
+<div class="font-body-sm text-on-surface-variant">AI Grading Speed</div>
+</div>
+</div>
+</div>
+</template>
+<template x-if="activeRole === 'cooperative'">
+<div class="space-y-space-md">
+<span class="text-primary font-label-md uppercase bg-primary-container/10 px-space-md py-space-xs rounded-full">For Cooperative Administrators</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Complete Silo Telemetry &amp; Member Aggregation</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Monitor multi-hub storage conditions remotely, manage farmer member batches effortlessly, and bulk-negotiate superior contracts with institutional buyers.</p>
+<div class="grid grid-cols-2 gap-space-md pt-space-sm">
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">100%</div>
+<div class="font-body-sm text-on-surface-variant">Inventory Visibility</div>
+</div>
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">Zero</div>
+<div class="font-body-sm text-on-surface-variant">Spoilage Disagreements</div>
+</div>
+</div>
+</div>
+</template>
+<template x-if="activeRole === 'buyer'">
+<div class="space-y-space-md">
+<span class="text-primary font-label-md uppercase bg-primary-container/10 px-space-md py-space-xs rounded-full">For Institutional Buyers &amp; Supermarkets</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Guaranteed Quality Produce &amp; Traceability</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Source directly from verified regional cooperatives with immutable digital certificates verifying freshness, origin, and optimal handling.</p>
+<div class="grid grid-cols-2 gap-space-md pt-space-sm">
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">99.2%</div>
+<div class="font-body-sm text-on-surface-variant">Batch Grade Accuracy</div>
+</div>
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">40%</div>
+<div class="font-body-sm text-on-surface-variant">Sourcing Time Saved</div>
+</div>
+</div>
+</div>
+</template>
+<template x-if="activeRole === 'transporter'">
+<div class="space-y-space-md">
+<span class="text-primary font-label-md uppercase bg-primary-container/10 px-space-md py-space-xs rounded-full">For Logistics &amp; Transporters</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Optimized Cold Chain Transit &amp; Route Planning</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Receive automated freight assignments from active marketplace transactions with built-in temperature logging and GPS milestone tracking.</p>
+<div class="grid grid-cols-2 gap-space-md pt-space-sm">
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">35%</div>
+<div class="font-body-sm text-on-surface-variant">Fuel Efficiency Gain</div>
+</div>
+<div class="bg-surface p-space-md rounded-xl">
+<div class="font-headline-md text-primary">Real-Time</div>
+<div class="font-body-sm text-on-surface-variant">Temperature Alerts</div>
+</div>
+</div>
+</div>
+</template>
+</div>
+<div class="lg:col-span-5">
+<div class="relative h-[340px] rounded-2xl overflow-hidden shadow-lg bg-surface">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Professional agricultural stakeholder managing mobile supply chain analytics on tablet in sunny greenhouse environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXkOUVpORCi5vS2QQ_u9ZTXP_sd5hxXeQrFfXw8xHnLqSq2n2-2CpHO67Hh37zoWsABxqyurWBb9tmLIOhDkeEziirIVTE4owpJxe9JtdT3XX7Yrth32o1gP5j6Z8I_SPfhwZWTJCa2yulcmbeen4JuIZFbrJkCm3ZPUBPViBBS6wWsxfV1WuonzPssVX4_jiiBh3Y1L5OV2Ram8mn4yTSZK9XKbjJjq7wOgU8ZWNf')"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact and Sustainability Metrics -->
+<section class="py-space-xl px-space-lg bg-primary text-on-primary">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-wider text-secondary-fixed mb-space-xs block">Measurable Impact</span>
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-space-sm">Driving Sustainable Agriculture at Scale</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80">Our ecosystem metrics demonstrate tangible progress toward zero food waste and farmer empowerment.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-primary-container p-space-xl rounded-2xl border border-on-primary/10 text-center">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center mx-auto mb-space-md">
+<span class="material-symbols-outlined text-[24px]">eco</span>
+</div>
+<div class="font-headline-xl text-secondary-fixed mb-space-xs">42,500 Tons</div>
+<h3 class="font-headline-sm text-on-primary mb-space-xs">Food Waste Prevented</h3>
+<p class="font-body-md text-on-primary/80">Saved from premature spoilage through rapid AI freshness assessment and cold chain monitoring.</p>
+</div>
+<div class="bg-primary-container p-space-xl rounded-2xl border border-on-primary/10 text-center">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center mx-auto mb-space-md">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+<div class="font-headline-xl text-secondary-fixed mb-space-xs">+34%</div>
+<h3 class="font-headline-sm text-on-primary mb-space-xs">Farmer Income Growth</h3>
+<p class="font-body-md text-on-primary/80">Achieved via direct B2B marketplace access and elimination of predatory middlemen margins.</p>
+</div>
+<div class="bg-primary-container p-space-xl rounded-2xl border border-on-primary/10 text-center">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/20 text-secondary-fixed flex items-center justify-center mx-auto mb-space-md">
+<span class="material-symbols-outlined text-[24px]">public</span>
+</div>
+<div class="font-headline-xl text-secondary-fixed mb-space-xs">18,200 Tons</div>
+<h3 class="font-headline-sm text-on-primary mb-space-xs">CO2 Emissions Saved</h3>
+<p class="font-body-md text-on-primary/80">Reduced methane and transport emissions through optimized regional aggregation hubs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-space-xl px-space-lg bg-surface">
+<div class="max-w-[1440px] mx-auto bg-gradient-to-br from-surface-container-high via-surface-container-low to-surface-container p-space-xl rounded-3xl text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#004c22 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-3xl mx-auto relative z-10 space-y-space-md">
+<span class="text-label-sm uppercase tracking-wider text-primary block">Get Started Today</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Ready to Protect Your Harvest and Scale Your Operations?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Join thousands of farmers, cooperatives, and buyers already leveraging AgriShield AI.</p>
+<div class="flex flex-wrap justify-center gap-space-md pt-space-md">
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-lg px-space-xl py-space-md rounded-lg shadow-md transition-all flex items-center gap-space-sm cursor-pointer">
+            Schedule a Demo
+            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</button>
+<button class="bg-surface text-on-surface hover:bg-surface-dim font-label-lg px-space-xl py-space-md rounded-lg transition-all border-none cursor-pointer">
+            Contact Sales Team
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Footer -->
+<footer class="bg-surface-container-low py-space-xl px-space-lg text-on-surface-variant">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-xl border-b border-outline-variant/20">
+<div class="md:col-span-4 space-y-space-md">
+<div class="flex items-center gap-space-md">
+<img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnoEaW1JTTyaJWnvgH2L6UrBpyPtGdyU_sLRFAdjcaw4lz-hBGtBxqZby7Qsdg34pKXYov8qyDsv-bj1kIZHzxGN0W6Gg1CzYUt4LQLWXPBBKU6oS8MCfX7LbcVYrtBW3Buc3FKw3DIcKIIpc6l8DHBjH7NwY8Lj8cCF_uunW3tyke6VQVUMuczoVjvA4ys2rtg0QsZ_KsB4WEjhvrvdyZQD9tc5k8qEwI_Ee04hMd">
+<span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">The intelligent agricultural ecosystem connecting farmers, buyers, transporters and cooperatives to reduce post-harvest losses.</p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary cursor-pointer hover:opacity-80">globe</span>
+<span class="material-symbols-outlined text-[20px] text-primary cursor-pointer hover:opacity-80">share</span>
+<span class="material-symbols-outlined text-[20px] text-primary cursor-pointer hover:opacity-80">mail</span>
+</div>
+</div>
+<div class="md:col-span-2 space-y-space-sm">
+<div class="font-headline-sm text-on-surface mb-space-md">Platform</div>
+<ul class="space-y-space-sm font-body-md">
+<li class=""><a class="hover:text-primary transition-colors" href="#">AI Freshness</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Surplus Market</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Digital Storage</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Aggregation</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-space-sm">
+<div class="font-headline-sm text-on-surface mb-space-md">Stakeholders</div>
+<ul class="space-y-space-sm font-body-md">
+<li class=""><a class="hover:text-primary transition-colors" href="#">For Farmers</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">For Cooperatives</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">For Buyers</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">For Transporters</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 space-y-space-md">
+<div class="font-headline-sm text-on-surface">Stay Updated</div>
+<p class="font-body-sm text-on-surface-variant">Subscribe to our agricultural intelligence newsletter for weekly market insights and loss prevention tips.</p>
+<div class="flex items-center gap-space-xs">
+<input class="bg-surface text-on-surface px-space-md py-space-sm rounded-lg text-body-sm w-full outline-none border border-outline-variant/30 focus:border-primary" placeholder="Enter your work email" type="email">
+<button class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg font-label-md hover:bg-primary/90 transition-all cursor-pointer whitespace-nowrap">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto pt-space-lg flex flex-col md:flex-row items-center justify-between text-body-sm">
+<div class="">© 2025 AgriShield AI Inc. All rights reserved.</div>
+<div class="flex gap-space-lg mt-space-md md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security &amp; Trust</a>
+</div>
+</div>
+</footer>
+</div></main></div>
+
+</body></html>

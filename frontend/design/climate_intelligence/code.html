@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYUgGPuDYLjuRMlKR2e8xgu9yFFpNJVNcXPpVB0q8lXmkSGr6rXcgFvux7keJQv3thFB2p5RakuiH3p3bDKX5ZbOXV9drBqAGej5TlvSZZ8GWPgMap_6Sf9LIU45OILc9vb5OUr8aYm2uHdU8my7WMrCN96tkieuUABeidfTwCeHEfmEd9b5JMJ9GwGI4yZT0mJ683u4MDV16bGxjb5Mo9nhyaS4UjvTpoaDZjJwIV"><span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span></div><div class="px-space-lg mb-space-md"><label class="text-label-sm text-on-surface-variant block mb-space-xs">Active Role</label><select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none"><option>Farmer</option><option>Buyer</option><option>Transporter</option><option>Cooperative Admin</option><option>Platform Admin</option></select></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="dashboards" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="freshness-intelligence" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="surplus-marketplace" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="aggregation" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="buyer-offers" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="transportation" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="digital-storage" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="ai-recommendations" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="transport-facilities" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="warehouse-availability" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" data-path="climate-intelligence" href="#"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a></a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center text-body-md text-on-surface-variant gap-space-xs"><span class="hover:text-on-surface cursor-pointer">App</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-medium">Overview</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-high text-on-surface pl-10 pr-space-md py-space-xs rounded-lg text-body-sm w-72 outline-none" placeholder="Search telemetry, batches, hubs..." type="text"></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Banner / Summary Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider px-space-sm py-space-xs bg-primary-fixed rounded">Sector Telemetry Active</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Updated 4 mins ago via Sentinel-2 &amp; Ground Nodes</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Climate Intelligence &amp; Predictive Weather</h1>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-label-lg font-label-lg px-space-md py-space-sm rounded-lg transition-all flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span class="">14-Day Outlook</span>
+</button>
+<button class="bg-primary-container text-on-primary-container hover:opacity-90 text-label-lg font-label-lg px-space-md py-space-sm rounded-lg transition-all flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Export Advisory PDF</span>
+</button>
+</div>
+</div>
+<!-- Extreme Weather Alert Ticker -->
+<div class="bg-error-container text-on-error-container rounded-xl p-space-md mb-space-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-error-container">Critical Frost Warning: Sector 7 &amp; 9 (Northern Valley)</h3>
+<p class="text-body-sm font-body-sm text-on-error-container/90">Surface temperatures expected to drop to -1.2°C at 04:00 AM. Automated micro-irrigation anti-frost protocols armed.</p>
+</div>
+</div>
+<button class="bg-error text-on-error px-space-md py-space-xs rounded-lg text-label-md font-label-md hover:opacity-90 transition-all shrink-0">View Mitigation Plan</button>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Hourly Curves & 14-Day Micro-Climate Forecast (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Hourly Temperature & Humidity Curve Widget -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">24-Hour Micro-Climate Curves</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Real-time thermal and atmospheric moisture tracking across primary agricultural clusters</p>
+</div>
+<div class="flex items-center gap-space-sm text-label-sm font-label-sm">
+<span class="flex items-center gap-space-xs text-primary"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Temp (°C)</span>
+<span class="flex items-center gap-space-xs text-secondary"><span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> Humidity (%)</span>
+</div>
+</div>
+<!-- Simulated SVG Graph -->
+<div class="w-full h-64 bg-surface-container rounded-lg p-space-md relative flex flex-col justify-end">
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between p-space-md pointer-events-none opacity-20">
+<div class="w-full h-[1px] bg-outline"></div>
+<div class="w-full h-[1px] bg-outline"></div>
+<div class="w-full h-[1px] bg-outline"></div>
+<div class="w-full h-[1px] bg-outline"></div>
+</div>
+<!-- SVG curve drawing -->
+<svg class="absolute inset-0 w-full h-full p-space-md overflow-visible" preserveAspectRatio="none" viewBox="0 0 600 200">
+<!-- Humidity area fill -->
+<path class="text-secondary/10" d="M0,120 Q75,100 150,140 T300,110 T450,90 T600,100 L600,200 L0,200 Z" fill="currentColor"></path>
+<!-- Temperature line -->
+<path class="text-primary" d="M0,80 Q75,130 150,60 T300,40 T450,90 T600,70" fill="none" stroke="currentColor" stroke-width="3"></path>
+<!-- Humidity line -->
+<path class="text-secondary" d="M0,120 Q75,100 150,140 T300,110 T450,90 T600,100" fill="none" stroke="currentColor" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant z-10 pt-space-md border-t border-surface-container-high mt-auto">
+<span class="">00:00</span>
+<span class="">04:00</span>
+<span class="">08:00</span>
+<span class="">12:00 (Peak)</span>
+<span class="">16:00</span>
+<span class="">20:00</span>
+<span class="">23:59</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-md mt-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Avg Daily High</span>
+<div class="text-headline-md font-headline-md text-on-surface mt-space-xs">28.4°C</div>
+<span class="text-body-sm font-body-sm text-primary flex items-center gap-space-xs mt-space-xs"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> +1.2°C vs seasonal avg</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Dew Point</span>
+<div class="text-headline-md font-headline-md text-on-surface mt-space-xs">14.1°C</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant mt-space-xs block">Low condensation risk</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Vapor Pressure Deficit</span>
+<div class="text-headline-md font-headline-md text-on-surface mt-space-xs">1.45 kPa</div>
+<span class="text-body-sm font-body-sm text-primary mt-space-xs block">Optimal transpiration</span>
+</div>
+</div>
+</div>
+<!-- 14-Day Micro-Climate Forecast Horizon -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">14-Day Sector Weather Matrix</h2>
+<span class="text-label-md font-label-md text-primary font-semibold">Model Confidence: 94.2%</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-space-sm">
+<!-- Day Card -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">TODAY</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">sunny</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">26° / 14°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">0% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded font-bold">Optimal</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">WED 12</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">partly_cloudy_day</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">27° / 15°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">10% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded font-bold">Optimal</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">THU 13</span>
+<span class="material-symbols-outlined text-[28px] text-secondary my-space-xs">rainy</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">21° / 12°</div>
+<span class="text-body-sm font-body-sm text-secondary font-medium">85% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-error-container text-on-error-container px-space-xs py-0.5 rounded font-bold">Heavy Rain</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">FRI 14</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">sunny</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">24° / 11°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">5% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded font-bold">Optimal</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">SAT 15</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">sunny</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">28° / 16°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">0% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded font-bold">Heat Spike</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">SUN 16</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">partly_cloudy_day</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">25° / 14°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">20% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded font-bold">Optimal</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-center flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-on-surface-variant">MON 17</span>
+<span class="material-symbols-outlined text-[28px] text-primary my-space-xs">sunny</span>
+<div>
+<div class="text-headline-sm font-headline-sm text-on-surface">26° / 15°</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">0% rain</span>
+</div>
+<span class="mt-space-sm text-[10px] bg-primary-fixed text-on-primary-fixed px-space-xs py-0.5 rounded font-bold">Optimal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Soil Moisture & Crop Protection Advisory (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Soil Moisture Indices Widget -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-space-md">Soil Moisture Depth Profile</h2>
+<div class="space-y-space-md">
+<div>
+<div class="flex justify-between text-label-md font-label-md mb-space-xs">
+<span class="text-on-surface">Root Zone (0 - 30cm)</span>
+<span class="text-primary font-bold">78% (Optimal)</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md font-label-md mb-space-xs">
+<span class="text-on-surface">Sub-Surface (30 - 60cm)</span>
+<span class="text-secondary font-bold">62% (Adequate)</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md font-label-md mb-space-xs">
+<span class="text-on-surface">Deep Reservoir (60 - 120cm)</span>
+<span class="text-error font-bold">41% (Deficit Warning)</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 41%"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-md bg-surface-container-lowest rounded-lg border-l-4 border-primary">
+<span class="text-label-sm font-label-sm text-primary uppercase block mb-space-xs">AI Hydration Recommendation</span>
+<p class="text-body-sm font-body-sm text-on-surface">Deep watering cycle recommended in Sector 4 prior to Thursday's expected rainfall to stabilize sub-surface nutrient leaching.</p>
+</div>
+</div>
+<!-- Actionable Crop Protection Advisory -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">Protection Advisory</h2>
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+</div>
+<div class="space-y-space-md">
+<div class="p-space-md bg-surface-container-lowest rounded-lg flex gap-space-md items-start">
+<span class="material-symbols-outlined text-error text-[24px] mt-0.5" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Frost Mitigation Action</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-space-xs">Deploy overhead sprinklers in Vineyard Block B between 03:00 and 06:00 AM to harness latent heat release.</p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-lg flex gap-space-md items-start">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5" style="font-variation-settings: 'FILL' 1;">pest_control</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Fungal Spore Risk: Moderate</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-space-xs">High humidity post-rain on Thursday increases powdery mildew risk. Apply preventative bio-fungicide.</p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-lg flex gap-space-md items-start">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Solar Scorch Prevention</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-space-xs">Saturday heat spike (28°C) combined with high UV. Ensure shade netting is deployed over fragile nursery beds.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-space-md bg-primary text-on-primary py-space-sm rounded-lg text-label-lg font-label-lg hover:opacity-95 transition-all text-center">
+          Dispatch Automated Action Plans
+        </button>
+</div>
+</div>
+</div>
+</div></main></div>
+
+
+</body></html>

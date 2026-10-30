@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AgriShield AI — Next-Gen AgriTech Ecosystem</title><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface">
+
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="px-space-lg mb-space-lg flex items-center gap-space-md">
+    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+      <span class="material-symbols-outlined text-[24px]">shield</span>
+    </div>
+    <span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span>
+  </div>
+  
+  <div class="px-space-lg mb-space-md">
+    <label class="text-label-sm text-on-surface-variant block mb-space-xs font-semibold">Active Role</label>
+    <select class="role-selector w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none cursor-pointer">
+      <option value="Farmer">Farmer</option>
+      <option value="Buyer">Buyer</option>
+      <option value="Transporter">Transporter</option>
+      <option value="Cooperative Admin">Cooperative Admin</option>
+      <option value="Platform Admin">Platform Admin</option>
+    </select>
+  </div>
+  
+  <nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto">
+    <a aria-current="page" class="flex items-center px-space-lg py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" href="index.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="dashboard.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Operations Hub
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="climate.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">cloud</span>Climate Intelligence
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="transport.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transport Facilities
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="storage.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Warehouse Fleet
+    </a>
+  </nav>
+
+  <div class="px-space-lg pt-space-md border-t border-outline-variant/30">
+    <div class="text-body-sm text-on-surface-variant">FastAPI Platform v1.0.0</div>
+    <div class="text-label-sm text-primary font-medium mt-1">Status: Production Ready</div>
+  </div>
+</aside>
+
+<!-- Main Wrapper -->
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg">
+    <div class="flex items-center gap-space-md">
+      <div class="flex items-center text-body-md text-on-surface-variant gap-space-xs">
+        <span class="hover:text-on-surface cursor-pointer">Platform</span>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-on-surface font-medium">Home & Overview</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-lg">
+      <div class="api-health-badge">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-800">Checking API...</span>
+      </div>
+      <div class="user-profile-slot"></div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg">
+    <div class="flex flex-col w-full text-on-surface">
+      <!-- Hero Section -->
+      <section class="relative -mt-16 pt-32 pb-24 px-space-lg bg-gradient-to-br from-surface-container-low via-surface to-surface-container-high overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#004c22 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
+          <div class="lg:col-span-7 flex flex-col items-start space-y-space-md">
+            <div class="inline-flex items-center gap-space-xs bg-primary-container/10 px-space-md py-space-xs rounded-full">
+              <span class="material-symbols-outlined text-primary text-[16px]">eco</span>
+              <span class="text-label-md text-primary font-semibold">Next-Gen AgriTech Ecosystem</span>
+            </div>
+            <h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+              Protect Your Harvest.<br>Empower Your Future.
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              An intelligent agricultural ecosystem connecting farmers, buyers, transporters, and cooperative societies to radically prevent post-harvest biological losses and optimize supply chain transparency across rural India.
+            </p>
+            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+              <button onclick="handleEnterDashboard()" class="bg-primary hover:bg-primary/90 text-on-primary font-label-lg px-space-xl py-space-md rounded-lg shadow-md transition-all flex items-center gap-space-sm cursor-pointer">
+                <span>Enter Operations Hub</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </button>
+              <button onclick="showAuthModal(false)" class="bg-surface-container-highest hover:bg-surface-dim text-on-surface font-label-lg px-space-xl py-space-md rounded-lg transition-all border-none cursor-pointer flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[18px] text-primary">person_add</span>
+                <span>Register / Sign In</span>
+              </button>
+              <button class="text-on-surface-variant hover:text-on-surface font-label-lg px-space-md py-space-md rounded-lg transition-all border-none cursor-pointer" onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})">
+                Core Engines ↓
+              </button>
+            </div>
+            <div class="grid grid-cols-3 gap-space-lg pt-space-md w-full max-w-lg border-t border-outline-variant/20">
+              <div>
+                <div class="font-headline-lg text-primary">34%</div>
+                <div class="font-body-sm text-on-surface-variant">Loss Reduction</div>
+              </div>
+              <div>
+                <div class="font-headline-lg text-primary">₹1.4Cr+</div>
+                <div class="font-body-sm text-on-surface-variant">Value Saved</div>
+              </div>
+              <div>
+                <div class="font-headline-lg text-primary">12.5k</div>
+                <div class="font-body-sm text-on-surface-variant">Active Farmers</div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 relative">
+            <div class="relative w-full h-[460px] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
+              <img src="design/landing_page/screen.png" alt="AgriShield Dashboard Preview" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent flex flex-col justify-end p-space-lg text-on-primary">
+                <div class="flex items-center gap-space-sm mb-space-xs">
+                  <span class="w-3 h-3 bg-secondary-fixed rounded-full animate-pulse"></span>
+                  <span class="text-label-sm uppercase tracking-wider text-secondary-fixed font-bold">Live AI Freshness Engine Active</span>
+                </div>
+                <div class="font-headline-sm">Hybrid Random Forest &amp; Agronomic Q10 Model</div>
+                <p class="font-body-sm text-on-primary/90 mt-1">Real-time biological degradation scoring with R² = 0.98 accuracy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Structural Challenges Section -->
+      <section class="py-space-xl px-space-lg bg-surface-container-low">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block font-semibold">The Crisis in Numbers</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Addressing Structural Gaps in the Agricultural Supply Chain</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Traditional agricultural corridors lose billions annually due to preventable inefficiencies, unmonitored storage microclimates, and predatory middleman arbitrage.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-error-container text-error flex items-center justify-center mb-space-md">
+                  <span class="material-symbols-outlined text-[24px]">trending_down</span>
+                </div>
+                <div class="font-headline-xl text-error mb-space-xs">14–22%</div>
+                <h3 class="font-headline-sm text-on-surface mb-space-xs font-semibold">Post-Harvest Loss</h3>
+                <p class="font-body-md text-on-surface-variant">Millions of tons of perishables spoil between the farm gate and consumer markets due to thermal shock and unventilated transit.</p>
+              </div>
+              <div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-error text-label-md">
+                <span class="material-symbols-outlined text-[16px]">warning</span>
+                <span>Mitigated with AI Freshness Engine</span>
+              </div>
+            </div>
+
+            <div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center mb-space-md">
+                  <span class="material-symbols-outlined text-[24px]">storefront</span>
+                </div>
+                <div class="font-headline-xl text-primary mb-space-xs">62%</div>
+                <h3 class="font-headline-sm text-on-surface mb-space-xs font-semibold">Sub-Truckload Distress</h3>
+                <p class="font-body-md text-on-surface-variant">Smallholder farmers with small surplus lots are unable to afford full truckloads, forcing distressed sales at mandi gates.</p>
+              </div>
+              <div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-primary text-label-md">
+                <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                <span>Resolved via Smart Surplus Pooling</span>
+              </div>
+            </div>
+
+            <div class="bg-surface p-space-xl rounded-2xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-secondary-fixed/30 text-secondary flex items-center justify-center mb-space-md">
+                  <span class="material-symbols-outlined text-[24px]">warehouse</span>
+                </div>
+                <div class="font-headline-xl text-secondary mb-space-xs">85%</div>
+                <h3 class="font-headline-sm text-on-surface mb-space-xs font-semibold">Storage Fraud & Paper Receipts</h3>
+                <p class="font-body-md text-on-surface-variant">Cooperative grain godowns rely on vulnerable paper records, leading to grain spoilage disputes and inability to access pledge finance.</p>
+              </div>
+              <div class="mt-space-lg pt-space-md border-t border-outline-variant/10 flex items-center gap-space-xs text-secondary text-label-md">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>Cryptographic SHA-256 Ledger</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Three Intelligent Solutions Section -->
+      <section class="py-space-xl px-space-lg bg-surface" id="solutions">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="text-label-sm uppercase tracking-wider text-primary mb-space-xs block font-semibold">Core Architecture</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Integrated Intelligence Engines</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Seamlessly combining biochemical shelf-life models, Haversine geospatial pooling, and cryptographic verification.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Engine 1 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary mb-space-lg">
+                  <span class="material-symbols-outlined text-[32px]">eco</span>
+                </div>
+                <h3 class="text-headline-md font-headline-md text-on-surface mb-space-xs font-semibold">AI Freshness Intelligence</h3>
+                <p class="text-body-md text-on-surface-variant mb-space-md">
+                  Evaluates respiratory thermal acceleration ($Q_{10}$) and vapor pressure deficits (VPD) combined with Scikit-learn regression models to predict exact hours of safe shelf life remaining.
+                </p>
+              </div>
+              <a href="dashboard.html" class="inline-flex items-center gap-1 text-primary font-semibold hover:underline mt-space-md">
+                Launch Freshness Tool <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Engine 2 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary mb-space-lg">
+                  <span class="material-symbols-outlined text-[32px]">hub</span>
+                </div>
+                <h3 class="text-headline-md font-headline-md text-on-surface mb-space-xs font-semibold">Smart Surplus Aggregation</h3>
+                <p class="text-body-md text-on-surface-variant mb-space-md">
+                  Connects smallholders within a 25km radius to pool fragmented crops into commercial bulk lots, backed by atomic database row locks to guarantee zero double-allocation risk.
+                </p>
+              </div>
+              <a href="dashboard.html" class="inline-flex items-center gap-1 text-secondary font-semibold hover:underline mt-space-md">
+                View Aggregation Pools <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Engine 3 -->
+            <div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-tertiary-fixed-dim/40 flex items-center justify-center text-tertiary mb-space-lg">
+                  <span class="material-symbols-outlined text-[32px]">lock</span>
+                </div>
+                <h3 class="text-headline-md font-headline-md text-on-surface mb-space-xs font-semibold">Digital Storage Ledger</h3>
+                <p class="text-body-md text-on-surface-variant mb-space-md">
+                  Tamper-evident warehouse receipts chained with SHA-256 cryptographic hashes, isolating authenticity, moisture testing, and physical grain grade metrics for complete auditability.
+                </p>
+              </div>
+              <a href="storage.html" class="inline-flex items-center gap-1 text-tertiary font-semibold hover:underline mt-space-md">
+                Inspect Storage Fleet <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logistics & Climate Showcase -->
+      <section class="py-space-xl px-space-lg bg-surface-container-low">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-space-xs text-primary font-semibold text-label-sm uppercase mb-space-xs">
+                <span class="material-symbols-outlined text-[16px]">local_shipping</span> Cold-Chain Logistics
+              </div>
+              <h3 class="text-headline-lg font-headline-lg text-on-surface mb-space-sm font-semibold">Transport Coordination & Route Optimization</h3>
+              <p class="text-body-md text-on-surface-variant mb-space-md">
+                Instant haulage quotations using road-network calibrated Haversine heuristics, automated reefer temperature verification, and 6-digit cryptographic delivery OTPs.
+              </p>
+            </div>
+            <a href="transport.html" class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-md font-semibold inline-flex items-center gap-1 self-start hover:bg-primary-container transition-all">
+              Manage Transport Fleet <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-space-xs text-secondary font-semibold text-label-sm uppercase mb-space-xs">
+                <span class="material-symbols-outlined text-[16px]">cloud</span> Microclimate Monitoring
+              </div>
+              <h3 class="text-headline-lg font-headline-lg text-on-surface mb-space-sm font-semibold">Predictive Climate Intelligence</h3>
+              <p class="text-body-md text-on-surface-variant mb-space-md">
+                Continuous satellite and ground-sensor telemetry tracking 24-hour diurnal thermal swings, humidity extremes, and early frost warnings across Maharashtra agricultural sectors.
+              </p>
+            </div>
+            <a href="climate.html" class="bg-secondary text-on-secondary px-space-md py-space-sm rounded-lg text-label-md font-semibold inline-flex items-center gap-1 self-start hover:bg-secondary/90 transition-all">
+              Open Climate Telemetry <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-surface-container py-space-xl px-space-lg text-on-surface-variant mt-space-xl rounded-t-3xl">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter pb-space-lg border-b border-outline-variant/20">
+          <div>
+            <div class="flex items-center gap-space-xs text-primary font-bold text-headline-sm mb-space-xs">
+              <span class="material-symbols-outlined">shield</span> AgriShield AI
+            </div>
+            <p class="text-body-sm text-on-surface-variant">
+              Post-harvest loss prevention, AI freshness assessment, and cooperative decision support for farmers and buyers.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-on-surface mb-space-xs text-label-lg">Dashboards</h4>
+            <ul class="space-y-1 text-body-sm">
+              <li><a href="dashboard.html" class="hover:text-primary transition-colors">Operations Hub</a></li>
+              <li><a href="climate.html" class="hover:text-primary transition-colors">Climate Intelligence</a></li>
+              <li><a href="transport.html" class="hover:text-primary transition-colors">Transport Facilities</a></li>
+              <li><a href="storage.html" class="hover:text-primary transition-colors">Warehouse Fleet</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-on-surface mb-space-xs text-label-lg">API Services</h4>
+            <ul class="space-y-1 text-body-sm">
+              <li><a href="http://localhost:8000/docs" target="_blank" class="hover:text-primary transition-colors">Swagger Documentation</a></li>
+              <li><a href="http://localhost:8000/redoc" target="_blank" class="hover:text-primary transition-colors">ReDoc API Specs</a></li>
+              <li><a href="http://localhost:8000/health" target="_blank" class="hover:text-primary transition-colors">System Health Check</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-on-surface mb-space-xs text-label-lg">Engineering Stack</h4>
+            <p class="text-body-sm text-on-surface-variant">
+              FastAPI • PostgreSQL / SQLite • SQLAlchemy 2.0 • Scikit-learn Random Forest • Tailwind CSS
+            </p>
+          </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto pt-space-md text-center text-body-sm text-on-surface-variant">
+          © 2026 AgriShield AI. Built with precision for sustainable agriculture.
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+
+<script src="api.js"></script>
+<script>
+  function handleEnterDashboard() {
+    const user = window.AgriShieldAPI.getCurrentUser();
+    if (user) {
+      window.location.href = "dashboard.html";
+    } else {
+      window.AgriShieldAPI.showAuthModal(true);
+    }
+  }
+</script>
+</body></html>
+

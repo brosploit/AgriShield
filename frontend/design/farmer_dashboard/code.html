@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYUgGPuDYLjuRMlKR2e8xgu9yFFpNJVNcXPpVB0q8lXmkSGr6rXcgFvux7keJQv3thFB2p5RakuiH3p3bDKX5ZbOXV9drBqAGej5TlvSZZ8GWPgMap_6Sf9LIU45OILc9vb5OUr8aYm2uHdU8my7WMrCN96tkieuUABeidfTwCeHEfmEd9b5JMJ9GwGI4yZT0mJ683u4MDV16bGxjb5Mo9nhyaS4UjvTpoaDZjJwIV"><span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span></div><div class="px-space-lg mb-space-md"><label class="text-label-sm text-on-surface-variant block mb-space-xs">Active Role</label><select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none"><option>Farmer</option><option>Buyer</option><option>Transporter</option><option>Cooperative Admin</option><option>Platform Admin</option></select></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page</a><a aria-current="page" class="flex items-center px-space-lg py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" data-path="dashboards" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Dashboards</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="freshness-intelligence" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">eco</span>Freshness Intelligence</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="surplus-marketplace" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">storefront</span>Surplus Marketplace</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="aggregation" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">hub</span>Aggregation</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="buyer-offers" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">local_offer</span>Buyer Offers</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="transportation" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transportation</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="digital-storage" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Digital Storage</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="ai-recommendations" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">psychology</span>AI Recommendations</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="available-transport" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Available Transport</a><a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="available-warehouses" href="#"><span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Available Warehouses</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center text-body-md text-on-surface-variant gap-space-xs"><span class="hover:text-on-surface cursor-pointer">App</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-medium">Overview</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-high text-on-surface pl-10 pr-space-md py-space-xs rounded-lg text-body-sm w-72 outline-none" placeholder="Search telemetry, batches, hubs..." type="text"></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg"><div class="flex flex-col w-full pb-16">
+<!-- Top Welcome Banner with Editorial Asymmetry -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-label-sm uppercase tracking-wider text-primary mb-space-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span class="">Farm Operations Hub • Nashik Sector 4</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Good Morning, Farmer Rajesh</h1>
+<p class="text-body-lg text-on-surface-variant mt-space-xs">Here is your agricultural activity overview and post-harvest status.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-lg hover:bg-primary-container transition-all shadow-sm" onclick="openModal()">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+        Register New Crop
+      </button>
+<button class="flex items-center gap-space-xs bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-label-lg hover:bg-surface-container-highest transition-all" onclick="triggerAssessment()">
+<span class="material-symbols-outlined text-[18px]">eco</span>
+        Assess Freshness
+      </button>
+</div>
+</div>
+<!-- Summary Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Registered Crops</span>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &quot;FILL&quot; 1;">agriculture</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-on-surface">12 Active Batches</div>
+<div class="text-body-sm text-primary mt-space-xs font-medium">48.5 Tons total weight</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Available Surplus</span>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &quot;FILL&quot; 1;">storefront</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-on-surface">18.2 Tons</div>
+<div class="text-body-sm text-secondary mt-space-xs font-medium">Ready for instant listing</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Buyer Offers</span>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &quot;FILL&quot; 1;">local_offer</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-on-surface">7 Pending</div>
+<div class="text-body-sm text-tertiary mt-space-xs font-medium">Avg +14% above market rate</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Requires Attention</span>
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: &quot;FILL&quot; 1;">warning</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-on-surface">2 Batches</div>
+<div class="text-body-sm text-error mt-space-xs font-medium">Moderate risk detected</div>
+</div>
+</div>
+</div>
+<!-- Main Grid Layout: Analytics & Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-xl">
+<!-- Left Column (8 cols): Crop Overview & Buyer Offers -->
+<div class="lg:col-span-8 space-y-space-xl">
+<!-- Section A: Crop Overview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Active Crop Inventory</h2>
+<p class="text-body-sm text-on-surface-variant">Real-time status and telemetry logs for harvested yields</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+<input class="bg-surface-container-high text-body-sm pl-8 pr-space-md py-space-xs rounded-lg outline-none w-48 text-on-surface" placeholder="Filter crops..." type="text">
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container text-label-sm text-on-surface-variant">
+<th class="py-space-sm px-space-md">Crop Name / ID</th>
+<th class="py-space-sm px-space-md">Quantity</th>
+<th class="py-space-sm px-space-md">Harvest Date</th>
+<th class="py-space-sm px-space-md">Status</th>
+<th class="py-space-sm px-space-md">Freshness Risk</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-medium">Organic Basmati Rice</div>
+<div class="text-body-sm text-on-surface-variant">Batch #AG-8894</div>
+</td>
+<td class="py-space-md px-space-md">12.4 Tons</td>
+<td class="py-space-md px-space-md">Oct 12, 2023</td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-surface-container-high text-on-surface text-label-sm">Stored (Silo A)</span></td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-error-container text-on-error-container text-label-sm font-bold">Moderate Risk</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-medium">Alphonso Mangoes</div>
+<div class="text-body-sm text-on-surface-variant">Batch #AG-9012</div>
+</td>
+<td class="py-space-md px-space-md">4.2 Tons</td>
+<td class="py-space-md px-space-md">Oct 18, 2023</td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-secondary-container text-on-secondary-container text-label-sm">Cold Storage</span></td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-bold">Low Risk</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-medium">Premium Wheat</div>
+<div class="text-body-sm text-on-surface-variant">Batch #AG-8750</div>
+</td>
+<td class="py-space-md px-space-md">25.0 Tons</td>
+<td class="py-space-md px-space-md">Sep 30, 2023</td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-surface-container-high text-on-surface text-label-sm">Silo B</span></td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-primary-fixed text-on-primary-fixed text-label-sm font-bold">Low Risk</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-medium">Nashik Red Onions</div>
+<div class="text-body-sm text-on-surface-variant">Batch #AG-9104</div>
+</td>
+<td class="py-space-md px-space-md">6.9 Tons</td>
+<td class="py-space-md px-space-md">Oct 20, 2023</td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-surface-container-high text-on-surface text-label-sm">Transit Ready</span></td>
+<td class="py-space-md px-space-md"><span class="px-space-xs py-1 rounded bg-error-container text-on-error-container text-label-sm font-bold">Moderate Risk</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section E: Buyer Offers -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Live Buyer Offers</h2>
+<p class="text-body-sm text-on-surface-variant">Top-tier corporate and cooperative bids on active listings</p>
+</div>
+<button class="text-primary text-label-lg font-medium hover:underline flex items-center gap-space-xs">
+            View All Offers <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container text-label-sm text-on-surface-variant">
+<th class="py-space-sm px-space-md">Buyer Organization</th>
+<th class="py-space-sm px-space-md">Target Crop</th>
+<th class="py-space-sm px-space-md">Volume</th>
+<th class="py-space-sm px-space-md">Offer Price</th>
+<th class="py-space-sm px-space-md">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-md text-on-surface divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-label-sm">FR</div>
+<div>
+<div class="font-medium">FreshMart Retail</div>
+<div class="text-body-sm text-on-surface-variant">Verified Buyer • 4.9★</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">Organic Basmati Rice</td>
+<td class="py-space-md px-space-md">10.0 Tons</td>
+<td class="py-space-md px-space-md">
+<span class="font-bold text-primary">$450 / ton</span>
+<span class="text-body-sm text-secondary block">+16% vs market</span>
+</td>
+<td class="py-space-md px-space-md">
+<button class="bg-primary text-on-primary px-space-md py-1 rounded text-label-sm hover:bg-primary-container transition-all">Accept Offer</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">AC</div>
+<div>
+<div class="font-medium">AgroCorp Exporters</div>
+<div class="text-body-sm text-on-surface-variant">Verified Buyer • 4.8★</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">Alphonso Mangoes</td>
+<td class="py-space-md px-space-md">4.2 Tons</td>
+<td class="py-space-md px-space-md">
+<span class="font-bold text-primary">$1,200 / ton</span>
+<span class="text-body-sm text-secondary block">+18% vs market</span>
+</td>
+<td class="py-space-md px-space-md">
+<button class="bg-primary text-on-primary px-space-md py-1 rounded text-label-sm hover:bg-primary-container transition-all">Accept Offer</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-md flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-label-sm">OD</div>
+<div>
+<div class="font-medium">Organic Direct</div>
+<div class="text-body-sm text-on-surface-variant">Verified Buyer • 4.7★</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">Nashik Red Onions</td>
+<td class="py-space-md px-space-md">5.0 Tons</td>
+<td class="py-space-md px-space-md">
+<span class="font-bold text-primary">$280 / ton</span>
+<span class="text-body-sm text-secondary block">+8% vs market</span>
+</td>
+<td class="py-space-md px-space-md">
+<button class="bg-primary text-on-primary px-space-md py-1 rounded text-label-sm hover:bg-primary-container transition-all">Accept Offer</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column (4 cols): Risk Distribution, AI Recommendations, Hub & Activity -->
+<div class="lg:col-span-4 space-y-space-xl">
+<!-- Section B: Freshness Risk Distribution -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-space-sm">Freshness Risk Gauge</h2>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">AI-powered predictive degradation metrics</p>
+<div class="space-y-space-md">
+<div>
+<div class="flex justify-between text-body-sm mb-space-xs font-medium">
+<span class="text-primary">Low Risk (Optimal)</span>
+<span class="">70%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body-sm mb-space-xs font-medium">
+<span class="text-on-surface">Moderate Risk</span>
+<span class="">20%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 20%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-body-sm mb-space-xs font-medium">
+<span class="text-error">High / Critical Risk</span>
+<span class="">10%</span>
+</div>
+<div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 10%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-md bg-surface-container-low rounded-lg flex items-start gap-space-md">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<p class="text-body-sm text-on-surface-variant">Batches showing moderate or high risk have been flagged for priority processing or immediate cold storage transfer.</p>
+</div>
+</div>
+<!-- Section C: AI Recommendations -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">AI Recommendations</h2>
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div class="space-y-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low border-l-4 border-error">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-sm font-bold text-error uppercase">High Priority</span>
+<span class="text-body-sm text-on-surface-variant">Batch #AG-8894</span>
+</div>
+<p class="text-body-md text-on-surface font-medium mb-space-sm">Immediate cold storage transfer recommended to prevent spoilage from ambient humidity spikes.</p>
+<button class="text-primary text-label-sm font-semibold hover:underline flex items-center gap-space-xs">
+              Execute Transfer Protocol <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low border-l-4 border-primary">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-sm font-bold text-primary uppercase">Optimization</span>
+<span class="text-body-sm text-on-surface-variant">Batch #AG-9012</span>
+</div>
+<p class="text-body-md text-on-surface font-medium mb-space-sm">Optimal market window opens in 48 hours. Listing surplus now secures +15% premium pricing.</p>
+<button class="text-primary text-label-sm font-semibold hover:underline flex items-center gap-space-xs">
+              List Surplus Now <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section D: Nearby Surplus Opportunities -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-space-sm">Nashik Hub Aggregation</h2>
+<p class="text-body-sm text-on-surface-variant mb-space-md">Collective transport discounts available with nearby farms</p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-medium text-body-md text-on-surface">Nashik Central Hub #4</span>
+<span class="text-label-sm text-secondary font-bold">78% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-space-sm">
+<div class="bg-secondary h-full rounded-full" style="width: 78%;"></div>
+</div>
+<p class="text-body-sm text-on-surface-variant">3 neighboring farms pooling shipments to Mumbai Port. Join to save ~22% on freight cost.</p>
+</div>
+<button class="w-full bg-surface-container-high text-on-surface py-space-sm rounded-lg text-label-lg font-medium hover:bg-surface-container-highest transition-all flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+          Join Aggregation Pool
+        </button>
+</div>
+<!-- Section F: Recent Activity Feed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-space-md">Recent Activity</h2>
+<div class="space-y-space-md text-body-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<div class="font-medium text-on-surface">Batch #AG-9012 Inspected</div>
+<div class="text-on-surface-variant">Freshness score certified at 98.4% by AI telemetry node.</div>
+<div class="text-label-sm text-outline mt-space-xs">2 hours ago</div>
+</div>
+</div>
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<div>
+<div class="font-medium text-on-surface">Surplus Listed</div>
+<div class="text-on-surface-variant">4.2 Tons of Alphonso Mangoes published to marketplace.</div>
+<div class="text-label-sm text-outline mt-space-xs">5 hours ago</div>
+</div>
+</div>
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</div>
+<div>
+<div class="font-medium text-on-surface">Transaction Completed</div>
+<div class="text-on-surface-variant">Received escrow payment of $3,400 for Wheat Batch #AG-8700.</div>
+<div class="text-label-sm text-outline mt-space-xs">Yesterday</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-inverse-surface/50 backdrop-blur-sm z-50 flex items-center justify-center hidden" id="cropModal">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl w-full max-w-lg shadow-xl relative">
+<button class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="text-headline-lg font-headline-lg text-on-surface mb-space-md">Register New Crop Batch</h3>
+<p class="text-body-sm text-on-surface-variant mb-space-lg">Enter harvest details to initialize AI freshness tracking and marketplace listing.</p>
+<div class="space-y-space-md">
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Crop Variety</label>
+<input class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" placeholder="e.g. Organic Basmati Rice" type="text">
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Quantity (Tons)</label>
+<input class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" placeholder="10.5" type="number">
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Harvest Date</label>
+<input class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" type="date">
+</div>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Storage Location / Silo</label>
+<select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none">
+<option>Silo A (Climate Controlled)</option>
+<option>Silo B (Standard Warehouse)</option>
+<option>Cold Storage Unit #2</option>
+<option>Transit Yard</option>
+</select>
+</div>
+</div>
+<div class="flex justify-end gap-space-md mt-space-xl">
+<button class="bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-label-lg hover:bg-surface-container-highest transition-all" onclick="closeModal()">Cancel</button>
+<button class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-lg hover:bg-primary-container transition-all" onclick="closeModal()">Submit Batch</button>
+</div>
+</div>
+</div>
+<script>
+    function openModal() {
+      document.getElementById('cropModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('cropModal').classList.add('hidden');
+    }
+    function triggerAssessment() {
+      alert('AI Freshness Assessment initiated across all 12 active batches. Telemetry sync in progress.');
+    }
+  </script>
+</div></main></div>
+
+
+
+</body></html>

@@ -1,0 +1,56 @@
+site_name: AgriShield AI Documentation
+site_description: Next-Gen Agricultural Intelligence Platform to Prevent Post-Harvest Losses
+site_author: AgriShield AI Team
+repo_url: https://github.com/gunjalpratik519-commits/AgriHub
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - System Architecture: ARCHITECTURE.md
+  - REST API Reference: API_DOCUMENTATION.md
+  - Machine Learning & Agronomic Science: ML_AND_AGRONOMIC_MODELS.md
+  - Frontend Design System: FRONTEND_GUIDE.md
+  - Dependencies & Environment: DEPENDENCIES.md
+  - Deployment & Operations: DEPLOYMENT_GUIDE.md
+

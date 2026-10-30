@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYUgGPuDYLjuRMlKR2e8xgu9yFFpNJVNcXPpVB0q8lXmkSGr6rXcgFvux7keJQv3thFB2p5RakuiH3p3bDKX5ZbOXV9drBqAGej5TlvSZZ8GWPgMap_6Sf9LIU45OILc9vb5OUr8aYm2uHdU8my7WMrCN96tkieuUABeidfTwCeHEfmEd9b5JMJ9GwGI4yZT0mJ683u4MDV16bGxjb5Mo9nhyaS4UjvTpoaDZjJwIV"><span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span></div><div class="px-space-lg mb-space-md"><label class="text-label-sm text-on-surface-variant block mb-space-xs">Active Role</label><select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none"><option>Farmer</option><option>Buyer</option><option>Transporter</option><option>Cooperative Admin</option><option>Platform Admin</option></select></div><nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="landing-page" href="#">Landing Page</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="dashboards" href="#">Dashboards</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="freshness-intelligence" href="#">Freshness Intelligence</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="surplus-marketplace" href="#">Surplus Marketplace</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="aggregation" href="#">Aggregation</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="buyer-offers" href="#">Buyer Offers</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="transportation" href="#">Transportation</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="digital-storage" href="#">Digital Storage</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="ai-recommendations" href="#">AI Recommendations</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-bold py-3" data-path="transport-facilities" href="#">Transport Facilities</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="warehouse-availability" href="#">Warehouse Availability</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg py-3" data-path="climate-intelligence" href="#">Climate Intelligence</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center text-body-md text-on-surface-variant gap-space-xs"><span class="hover:text-on-surface cursor-pointer">App</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-medium">Overview</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-high text-on-surface pl-10 pr-space-md py-space-xs rounded-lg text-body-sm w-72 outline-none" placeholder="Search telemetry, batches, hubs..." type="text"></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg"><div class="flex flex-col w-full">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-space-xl gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="text-label-sm text-primary uppercase font-label-sm">Sector 4 Logistics Hub</span>
+<span class="text-on-surface-variant">•</span>
+<span class="text-label-sm text-on-surface-variant font-label-sm">Nashik Agro-Corridor</span>
+</div>
+<h1 class="text-headline-xl text-on-surface font-headline-xl">Transport Facilities &amp; Fleet Management</h1>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-lg px-space-lg py-space-md rounded-xl transition-all shadow-md flex items-center gap-space-sm cursor-pointer" onclick="openBookingModal()">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+        Schedule Transport
+      </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-xl">
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-space-md">
+<div>
+<p class="text-label-md text-on-surface-variant mb-space-xs">Active Vehicles</p>
+<h3 class="text-headline-lg text-on-surface font-headline-lg">142</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">airport_shuttle</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="">+12% capacity available today</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-space-md">
+<div>
+<p class="text-label-md text-on-surface-variant mb-space-xs">Reefer Cold Chain</p>
+<h3 class="text-headline-lg text-on-surface font-headline-lg">68 Units</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">ac_unit</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Avg temp 2.4°C verified</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-space-md">
+<div>
+<p class="text-label-md text-on-surface-variant mb-space-xs">Avg. Driver Rating</p>
+<h3 class="text-headline-lg text-on-surface font-headline-lg">4.89 / 5</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[24px]">star</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Verified biometrics &amp; background</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-start mb-space-md">
+<div>
+<p class="text-label-md text-on-surface-variant mb-space-xs">Live Route Status</p>
+<h3 class="text-headline-lg text-on-surface font-headline-lg">Optimal</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">route</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="">NH-60 Corridor clear</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg mb-space-xl">
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-space-lg">
+<h2 class="text-headline-md text-on-surface font-headline-md">Verified Transport Providers</h2>
+<div class="flex items-center gap-space-sm">
+<select class="bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" id="vehicleFilter" onchange="filterProviders()">
+<option value="all">All Vehicle Types</option>
+<option value="reefer">Refrigerated Trucks</option>
+<option value="heavy">Heavy Haulers</option>
+<option value="mini">Mini-Trucks</option>
+</select>
+</div>
+</div>
+<div class="space-y-space-md flex-1" id="providerList">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card" data-type="reefer">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md shrink-0">
+              NS
+            </div>
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h4 class="text-headline-sm text-on-surface font-headline-sm">Nashik Shippers Co-op Ltd</h4>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm px-space-xs py-0.5 rounded">Verified Fleet</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-xs">Refrigerated Trucks • 15 Ton Capacity • GPS Live Tracking</p>
+<div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">star</span> 4.9 (124 runs)</span>
+<span class="">•</span>
+<span class="">Base: Lasalgaon Hub</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+<span class="text-headline-sm text-on-surface font-headline-sm">₹24/km</span>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface px-space-md py-space-sm rounded-lg text-label-lg transition-all cursor-pointer" onclick="openBookingModal('Nashik Shippers Co-op Ltd')">
+              Book Fleet
+            </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card" data-type="heavy">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md shrink-0">
+              AH
+            </div>
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h4 class="text-headline-sm text-on-surface font-headline-sm">AgroHaul Logistics Inc</h4>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm px-space-xs py-0.5 rounded">Heavy Hauler</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-xs">Multi-Axle Flatbeds • 32 Ton Capacity • Bulk Transit</p>
+<div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">star</span> 4.8 (98 runs)</span>
+<span class="">•</span>
+<span class="">Base: Pimpalgaon APMC</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+<span class="text-headline-sm text-on-surface font-headline-sm">₹38/km</span>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface px-space-md py-space-sm rounded-lg text-label-lg transition-all cursor-pointer" onclick="openBookingModal('AgroHaul Logistics Inc')">
+              Book Fleet
+            </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card" data-type="mini">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md shrink-0">
+              QE
+            </div>
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h4 class="text-headline-sm text-on-surface font-headline-sm">QuickExpress Farm-Gate</h4>
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-space-xs py-0.5 rounded">Mini-Truck</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-xs">Covered Mini-Trucks • 3.5 Ton Capacity • Rapid Rural Pickup</p>
+<div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">star</span> 4.9 (240 runs)</span>
+<span class="">•</span>
+<span class="">Base: Dindori Sector 4</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+<span class="text-headline-sm text-on-surface font-headline-sm">₹16/km</span>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface px-space-md py-space-sm rounded-lg text-label-lg transition-all cursor-pointer" onclick="openBookingModal('QuickExpress Farm-Gate')">
+              Book Fleet
+            </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card" data-type="reefer">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md shrink-0">
+              CC
+            </div>
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<h4 class="text-headline-sm text-on-surface font-headline-sm">ColdChain Express Nashik</h4>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm px-space-xs py-0.5 rounded">Verified Fleet</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-space-xs">Advanced Reefer Vans • 8 Ton Capacity • Automated Humidity Control</p>
+<div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">star</span> 4.7 (86 runs)</span>
+<span class="">•</span>
+<span class="">Base: Ozhar Hub</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+<span class="text-headline-sm text-on-surface font-headline-sm">₹22/km</span>
+<button class="bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface px-space-md py-space-sm rounded-lg text-label-lg transition-all cursor-pointer" onclick="openBookingModal('ColdChain Express Nashik')">
+              Book Fleet
+            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col">
+<h2 class="text-headline-md text-on-surface font-headline-md mb-space-md">Live Corridor Intelligence</h2>
+<div class="flex-1 rounded-xl overflow-hidden mb-space-md relative min-h-[300px]">
+<div class="w-full h-full bg-cover bg-center absolute inset-0" data-alt="A high-contrast digital logistics map interface showing Nashik Sector 4 agricultural highway corridors with glowing green paths connecting farm gates to cold storage depots. The map features clear markers for active transport units, congestion-free routes along NH-60, and temperature status indicators overlaying topographical terrain in emerald green and subtle slate grey tones." data-location="Nashik Sector 4, APMC &amp; Cold Storage Route Map" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8i4RGyX-pifAiMTJOmxdFaJWCqJ8fCY2GQ7Kb3hiGvr5YDyfAVHby5ZIoNJzlTQFVRNfY7wtXD0e49SIZrnam2sU7Y8i6aM5Iru-AtCrUgnLFTKykYDCwr7EyHzrinLElBmwzRv05tX-SnojkG4Z7m4Z-ksHRZsTiZFmxdZGUudZSw9amu9hiphroBNYx70hGuBqlC6Uo5Tl95aJFRCzc0gk6Q6tCwTRhBjCOHux6')"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-space-md rounded-xl shadow-md">
+<div class="flex justify-between items-center mb-space-xs">
+<span class="text-label-sm text-on-surface font-label-sm">NH-60 Corridor Status</span>
+<span class="text-label-sm text-secondary font-label-sm flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Free Flow</span>
+</div>
+<p class="text-body-sm text-on-surface-variant">Average transit time to Mumbai Central Market: 3h 45m. No weather delays reported.</p>
+</div>
+</div>
+<div class="space-y-space-sm">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Active Telemetry Pings</span>
+<span class="text-on-surface font-medium">99.8% Connected</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Average Dispatch Time</span>
+<span class="text-on-surface font-medium">18 minutes</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 flex items-center justify-center p-space-md hidden" id="bookingModal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden p-space-xl relative">
+<button class="absolute top-space-lg right-space-lg text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="closeBookingModal()">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<div class="mb-space-lg">
+<span class="text-label-sm text-primary uppercase font-label-sm">AgriShield Dispatch System</span>
+<h2 class="text-headline-lg text-on-surface font-headline-lg">Schedule Crop Transport</h2>
+</div>
+<form class="space-y-space-md" onsubmit="handleBookingSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Selected Provider</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" id="modalProvider" readonly="" type="text" value="Nashik Shippers Co-op Ltd">
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Vehicle Requirement</label>
+<select class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none">
+<option>Refrigerated Truck (15 Ton - 2°C to 8°C)</option>
+<option>Heavy Hauler Flatbed (32 Ton)</option>
+<option>Mini-Truck Farm Gate (3.5 Ton)</option>
+<option>Reefer Van (8 Ton)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Pickup Location (Farm Gate / Hub)</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" placeholder="e.g., Sector 4 Block C, Dindori Farm" required="" type="text">
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Destination Market / Storage</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" placeholder="e.g., Lasalgaon Cold Storage Facility #3" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Crop Type &amp; Volume</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" placeholder="e.g., Export Grade Grapes, 12 Tons" required="" type="text">
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Scheduled Pickup Date &amp; Time</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" required="" type="datetime-local">
+</div>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Special Handling Instructions</label>
+<textarea class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" placeholder="Maintain continuous temp monitoring at 4°C, fragile cargo..." rows="3"></textarea>
+</div>
+<div class="flex justify-end gap-space-md pt-space-md">
+<button class="px-space-lg py-space-md rounded-xl text-on-surface-variant hover:text-on-surface font-label-lg cursor-pointer" onclick="closeBookingModal()" type="button">
+            Cancel
+          </button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-lg px-space-xl py-space-md rounded-xl transition-all shadow-md cursor-pointer" type="submit">
+            Confirm &amp; Dispatch
+          </button>
+</div>
+</form>
+</div>
+</div>
+<div class="fixed bottom-8 right-8 bg-primary text-on-primary px-space-lg py-space-md rounded-xl shadow-xl z-50 transform translate-y-32 transition-transform duration-300 flex items-center gap-space-md" id="successToast">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<div>
+<h4 class="font-headline-sm text-on-primary">Transport Dispatched Successfully!</h4>
+<p class="text-body-sm text-on-primary/80">Vehicle assigned with live GPS telemetry active.</p>
+</div>
+</div>
+<script>
+    function openBookingModal(providerName) {
+      if(providerName) {
+        document.getElementById('modalProvider').value = providerName;
+      }
+      document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      closeBookingModal();
+      const toast = document.getElementById('successToast');
+      toast.classList.remove('translate-y-32');
+      setTimeout(() => {
+        toast.classList.add('translate-y-32');
+      }, 4000);
+    }
+
+    function filterProviders() {
+      const filter = document.getElementById('vehicleFilter').value;
+      const cards = document.querySelectorAll('.provider-card');
+      cards.forEach(card => {
+        if(filter === 'all' || card.dataset.type === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</div></main></div>
+
+
+</body></html>

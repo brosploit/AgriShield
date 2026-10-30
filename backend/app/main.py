@@ -134,8 +134,13 @@ def health_check():
     )
 
 
+from fastapi.responses import JSONResponse, RedirectResponse
+
 @app.get("/", tags=["Root"])
-def root():
+def root(request: Request):
+    accept = request.headers.get("accept", "")
+    if "text/html" in accept:
+        return RedirectResponse(url="/app/", status_code=307)
     return {
         "service": settings.PROJECT_NAME,
         "version": settings.VERSION,
@@ -143,9 +148,18 @@ def root():
         "documentation": "/docs",
         "health": "/health",
         "api_v1": settings.API_V1_STR,
+        "frontend_app": "/app/",
     }
 
 
 # Mount API V1 Routes
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+# Mount Frontend Static Web Application (if frontend directory exists)
+from pathlib import Path
+frontend_dir = Path(__file__).resolve().parent.parent.parent / "frontend"
+if frontend_dir.exists():
+    from fastapi.staticfiles import StaticFiles
+    app.mount("/app", StaticFiles(directory=str(frontend_dir), html=True), name="frontend")
+
 

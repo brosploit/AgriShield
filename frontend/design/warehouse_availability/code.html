@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-xl": ["36px", {lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700"}], "label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["22px", {lineHeight: "28px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["28px", {lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-md"><img alt="Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYUgGPuDYLjuRMlKR2e8xgu9yFFpNJVNcXPpVB0q8lXmkSGr6rXcgFvux7keJQv3thFB2p5RakuiH3p3bDKX5ZbOXV9drBqAGej5TlvSZZ8GWPgMap_6Sf9LIU45OILc9vb5OUr8aYm2uHdU8my7WMrCN96tkieuUABeidfTwCeHEfmEd9b5JMJ9GwGI4yZT0mJ683u4MDV16bGxjb5Mo9nhyaS4UjvTpoaDZjJwIV"><span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span></div><div class="px-space-lg mb-space-md"><label class="text-label-sm text-on-surface-variant block mb-space-xs">Active Role</label><select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none"><option>Farmer</option><option>Buyer</option><option>Transporter</option><option>Cooperative Admin</option><option>Platform Admin</option></select></div><nav class="flex-1 px-space-md space-y-space-sm overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="landing-page" href="#">Landing Page</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="dashboards" href="#">Dashboards</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="freshness-intelligence" href="#">Freshness Intelligence</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="surplus-marketplace" href="#">Surplus Marketplace</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="aggregation" href="#">Aggregation</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="buyer-offers" href="#">Buyer Offers</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="transportation" href="#">Transportation</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="digital-storage" href="#">Digital Storage</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="ai-recommendations" href="#">AI Recommendations</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="transport-facilities" href="#">Transport Facilities</a><a aria-current="page" class="flex items-center px-space-md py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" data-path="warehouse-availability" href="#">Warehouse Availability</a><a class="flex items-center px-space-md py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" data-path="climate-intelligence" href="#">Climate Intelligence</a></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center text-body-md text-on-surface-variant gap-space-xs"><span class="hover:text-on-surface cursor-pointer">App</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-on-surface font-medium">Overview</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-high text-on-surface pl-10 pr-space-md py-space-xs rounded-lg text-body-sm w-72 outline-none" placeholder="Search telemetry, batches, hubs..." type="text"></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Banner / Header Segment -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg bg-surface-container-low p-space-lg rounded-xl shadow-sm">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="bg-primary-container text-on-primary-container text-label-sm px-space-sm py-space-xs rounded-full uppercase tracking-wider">Sector 4 Operations</span>
+<span class="text-on-surface-variant text-label-md">• Live Telemetry Active</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Warehouse &amp; Cold Storage Fleet</h1>
+<p class="text-body-md text-on-surface-variant mt-space-xs">Monitor atmospheric parameters, reserve cold-chain slots, and manage grain batch deposits across Nashik cooperative nodes.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="bg-primary hover:bg-primary/90 text-on-primary text-label-lg px-space-lg py-space-sm rounded-lg flex items-center gap-space-sm transition-all shadow-md" onclick="openReservationModal()">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+<span class="">New Batch Deposit</span>
+</button>
+</div>
+</div>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant">Total Storage Capacity</span>
+<span class="material-symbols-outlined text-primary text-[24px]">warehouse</span>
+</div>
+<div>
+<span class="text-headline-xl text-on-surface">142,500</span>
+<span class="text-body-sm text-on-surface-variant ml-space-xs">Metric Tons</span>
+</div>
+<div class="mt-space-md pt-space-sm text-label-sm text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="">+4.2% expansion this quarter</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant">Current Occupancy</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">pie_chart</span>
+</div>
+<div>
+<span class="text-headline-xl text-on-surface">78.4%</span>
+<span class="text-body-sm text-on-surface-variant ml-space-xs">Utilization</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78.4%;"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant">Climate Compliance</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">ac_unit</span>
+</div>
+<div>
+<span class="text-headline-xl text-on-surface">99.8%</span>
+<span class="text-body-sm text-on-surface-variant ml-space-xs">Optimal Range</span>
+</div>
+<div class="mt-space-md pt-space-sm text-label-sm text-on-tertiary-container flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">All cold rooms stable</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="text-label-md text-on-surface-variant">Pending Deposits</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">pending_actions</span>
+</div>
+<div>
+<span class="text-headline-xl text-on-surface">14</span>
+<span class="text-body-sm text-on-surface-variant ml-space-xs">Batches today</span>
+</div>
+<div class="mt-space-md pt-space-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="">Avg. gate clearance 18m</span>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (Bento Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Left 2 Cols: Hub Capacities & Telemetry -->
+<div class="lg:col-span-2 space-y-space-lg">
+<!-- Cooperative Hubs Card -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="text-headline-md text-on-surface">Nashik Sector 4 Hub Capacities</h2>
+<p class="text-body-sm text-on-surface-variant">Real-time tonnage tracking &amp; environmental sensor telemetry</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="bg-surface-container-high hover:bg-surface-container text-on-surface text-label-sm px-space-md py-space-xs rounded-lg transition-all">Filter Hubs</button>
+</div>
+</div>
+<div class="space-y-space-md">
+<!-- Hub 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+</div>
+<div>
+<h3 class="text-headline-sm text-on-surface">Nashik Central Hub</h3>
+<p class="text-body-sm text-on-surface-variant">Sector 4 Primary Terminal • Multi-crop Grain &amp; Cold Storage</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-space-sm py-space-xs rounded-md">82% Occupied</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md my-space-md py-space-sm bg-surface-container-low px-space-md rounded-lg">
+<div>
+<span class="text-label-sm text-on-surface-variant block">Capacity</span>
+<span class="text-body-md font-medium text-on-surface">45,000 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Available</span>
+<span class="text-body-md font-medium text-primary">8,100 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Temp Log</span>
+<span class="text-body-md font-medium text-on-surface">4.2°C <span class="text-tertiary text-label-sm">● Stable</span></span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Humidity</span>
+<span class="text-body-md font-medium text-on-surface">62% RH</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="">24/24 Sensors Active • Last sync 1m ago</span>
+</div>
+<button class="text-primary hover:underline text-label-md flex items-center gap-space-xs" onclick="openHubDetail('Nashik Central Hub')">
+<span class="">View Telemetry Logs</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Hub 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">ac_unit</span>
+</div>
+<div>
+<h3 class="text-headline-sm text-on-surface">Niphad Cold Storage Facility</h3>
+<p class="text-body-sm text-on-surface-variant">Sub-zero Horticultural &amp; Onion Preservation Unit</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm px-space-sm py-space-xs rounded-md">64% Occupied</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md my-space-md py-space-sm bg-surface-container-low px-space-md rounded-lg">
+<div>
+<span class="text-label-sm text-on-surface-variant block">Capacity</span>
+<span class="text-body-md font-medium text-on-surface">32,000 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Available</span>
+<span class="text-body-md font-medium text-primary">11,520 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Temp Log</span>
+<span class="text-body-md font-medium text-on-surface">-1.5°C <span class="text-tertiary text-label-sm">● Optimal</span></span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Humidity</span>
+<span class="text-body-md font-medium text-on-surface">85% RH</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="">18/18 Sensors Active • Last sync just now</span>
+</div>
+<button class="text-primary hover:underline text-label-md flex items-center gap-space-xs" onclick="openHubDetail('Niphad Cold Storage Facility')">
+<span class="">View Telemetry Logs</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Hub 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl transition-all hover:shadow-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<div>
+<h3 class="text-headline-sm text-on-surface">Pimpalgaon Silos</h3>
+<p class="text-body-sm text-on-surface-variant">Hermetically Sealed Bulk Grain Silo Complex</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="bg-error-container text-on-error-container text-label-sm px-space-sm py-space-xs rounded-md">94% Occupied</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md my-space-md py-space-sm bg-surface-container-low px-space-md rounded-lg">
+<div>
+<span class="text-label-sm text-on-surface-variant block">Capacity</span>
+<span class="text-body-md font-medium text-on-surface">65,500 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Available</span>
+<span class="text-body-md font-medium text-error">3,930 MT</span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Temp Log</span>
+<span class="text-body-md font-medium text-on-surface">12.1°C <span class="text-tertiary text-label-sm">● Stable</span></span>
+</div>
+<div>
+<span class="text-label-sm text-on-surface-variant block">Humidity</span>
+<span class="text-body-md font-medium text-on-surface">45% RH</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+<span class="">32/32 Sensors Active • Last sync 3m ago</span>
+</div>
+<button class="text-primary hover:underline text-label-md flex items-center gap-space-xs" onclick="openHubDetail('Pimpalgaon Silos')">
+<span class="">View Telemetry Logs</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Geospatial Sector Map Preview -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="text-headline-md text-on-surface">Sector 4 Geographical Distribution</h2>
+<p class="text-body-sm text-on-surface-variant">Real-time transit nodes and storage cluster mapping</p>
+</div>
+<span class="text-label-sm text-primary font-medium">GIS Node: Nashik Metro Region</span>
+</div>
+<div class="w-full h-72 bg-cover bg-center rounded-xl shadow-inner relative overflow-hidden flex items-end p-space-md" data-alt="Satellite map view of Nashik agricultural sector showing three prominent grain storage hubs connected by transport corridors with glowing status indicators overlaying the terrain." data-location="Nashik Sector 4, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFeal_BF4VnvN8wPYSpbNVq8Ej-wVmPW8CXW5CQ6GvjAulafnNrH7MSlmqlCtQsXZpIF6Wi8QL-zC-yNggnRovQQk1XLS3WbIwMrzuO0nxJExhUABzTweXojyL-5cHU6GM2O1hbljxRTBji53oFyViMeuFtKumaPpuwCWXMLBB52TWtQhkIBNOA7lEmf_YbGLbtljsZbHPUVyFC3Dkwnz0UbNV0WUTOk85tzdkcG70')">
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="relative z-10 bg-surface/90 backdrop-blur-md px-space-md py-space-sm rounded-lg flex items-center gap-space-md shadow-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="text-label-md text-on-surface font-semibold">Active Hub Cluster: Nashik Highway 60</p>
+<p class="text-body-sm text-on-surface-variant">All cold-chain trucks within 15km reporting normal climate control.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 1 Col: Quick Actions & Slot Reservation Form -->
+<div class="space-y-space-lg">
+<!-- Instant Deposit Request Widget -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm">
+<h2 class="text-headline-md text-on-surface mb-space-xs">Slot Reservation</h2>
+<p class="text-body-sm text-on-surface-variant mb-space-md">Secure dedicated tonnage for upcoming harvest batches.</p>
+<form class="space-y-space-md" id="reservationForm" onsubmit="handleReservation(event)">
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Select Storage Hub</label>
+<select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" id="resHub">
+<option>Nashik Central Hub (General &amp; Cold)</option>
+<option>Niphad Cold Storage Facility</option>
+<option>Pimpalgaon Silos (Bulk Grain)</option>
+</select>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Crop / Produce Type</label>
+<select class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none" id="resCrop">
+<option>Grade-A Basmati Paddy</option>
+<option>Nashik Red Onions (Cold Chain)</option>
+<option>Soybean Bulk Granules</option>
+<option>Hybrid Maize</option>
+</select>
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Batch Volume (Metric Tons)</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" id="resVolume" placeholder="e.g. 150" required="" type="number">
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">Expected Deposit Date</label>
+<input class="w-full bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-body-md outline-none" id="resDate" required="" type="date">
+</div>
+<div>
+<label class="text-label-sm text-on-surface-variant block mb-space-xs">IoT Sensor Monitoring Level</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<label class="flex items-center gap-space-xs bg-surface-container-high p-space-sm rounded-lg cursor-pointer">
+<input checked="" class="text-primary" name="sensorTier" type="radio">
+<span class="text-body-sm text-on-surface">Standard IoT</span>
+</label>
+<label class="flex items-center gap-space-xs bg-surface-container-high p-space-sm rounded-lg cursor-pointer">
+<input class="text-primary" name="sensorTier" type="radio">
+<span class="text-body-sm text-on-surface">AI Predictive</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary text-label-lg py-space-md rounded-lg font-medium transition-all shadow-md flex items-center justify-center gap-space-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Instant Slot Booking</span>
+</button>
+</form>
+</div>
+<!-- Live Activity / Recent Logs -->
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="text-headline-sm text-on-surface">Recent Gate &amp; Vault Activity</h3>
+<span class="text-label-sm text-primary">Live Feed</span>
+</div>
+<div class="space-y-space-md">
+<div class="flex items-start gap-space-md pb-space-md border-b border-surface-container-high">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<div>
+<p class="text-body-md text-on-surface font-medium">Batch #NSK-8821 Deposited</p>
+<p class="text-body-sm text-on-surface-variant">Nashik Central Hub • 120 MT Basmati</p>
+<span class="text-label-sm text-on-surface-variant">12 mins ago</span>
+</div>
+</div>
+<div class="flex items-start gap-space-md pb-space-md border-b border-surface-container-high">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[16px]">ac_unit</span>
+</div>
+<div>
+<p class="text-body-md text-on-surface font-medium">Cold Room Calibration</p>
+<p class="text-body-sm text-on-surface-variant">Niphad Facility • Unit #4 Temp adjusted to -1.8°C</p>
+<span class="text-label-sm text-on-surface-variant">45 mins ago</span>
+</div>
+</div>
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary mt-0.5">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+</div>
+<div>
+<p class="text-body-md text-on-surface font-medium">Quality Audit Cleared</p>
+<p class="text-body-sm text-on-surface-variant">Pimpalgaon Silos • 450 MT Maize</p>
+<span class="text-label-sm text-on-surface-variant">2 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Detail Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/50 backdrop-blur-sm hidden items-center justify-center p-space-lg" id="telemetryModal">
+<div class="bg-surface-container-low w-full max-w-2xl p-space-lg rounded-2xl shadow-xl relative animate-in fade-in zoom-in duration-200">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="text-headline-md text-on-surface" id="modalHubTitle">Hub Telemetry Analysis</h3>
+<p class="text-body-sm text-on-surface-variant">Real-time sensor logs over past 24 hours</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-surface-container" onclick="closeModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="text-label-md text-on-surface-variant">Temperature Variance (Target: 4.0°C)</span>
+<span class="text-label-sm text-tertiary">Optimal Trend</span>
+</div>
+<div class="h-28 w-full bg-surface-container-low rounded-lg flex items-end justify-between p-space-sm">
+<div class="w-3 bg-primary rounded-t" style="height: 40%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 45%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 42%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 38%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 50%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 48%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 44%;"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 42%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl">
+<span class="text-label-sm text-on-surface-variant block mb-space-xs">Power Backup Status</span>
+<span class="text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+              100% DG Ready
+            </span>
+<p class="text-body-sm text-on-surface-variant mt-space-xs">Automatic failover tested 4h ago.</p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl">
+<span class="text-label-sm text-on-surface-variant block mb-space-xs">Aerosol / Gas Level</span>
+<span class="text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">air</span>
+              CO2 Purged
+            </span>
+<p class="text-body-sm text-on-surface-variant mt-space-xs">Atmospheric control active.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-space-md mt-space-lg">
+<button class="bg-surface-container-high text-on-surface px-space-lg py-space-sm rounded-lg text-label-lg" onclick="closeModal()">Close</button>
+<button class="bg-primary text-on-primary px-space-lg py-space-sm rounded-lg text-label-lg" onclick="alert('Exporting full CSV telemetry report...'); closeModal();">Export Logs</button>
+</div>
+</div>
+</div>
+<!-- Success Notification Toast -->
+<div class="fixed bottom-space-lg right-space-lg bg-primary text-on-primary px-space-lg py-space-md rounded-xl shadow-xl transform translate-y-32 transition-all duration-300 flex items-center gap-space-md z-50" id="toast">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+<div>
+<h4 class="text-headline-sm">Reservation Submitted Successfully</h4>
+<p class="text-body-sm text-on-primary-container">Slot allocated in Nashik Sector 4 node. Gate token generated.</p>
+</div>
+</div>
+<script>
+    function openHubDetail(hubName) {
+      document.getElementById('modalHubTitle').innerText = hubName + ' - Telemetry Analysis';
+      document.getElementById('telemetryModal').classList.remove('hidden');
+      document.getElementById('telemetryModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('telemetryModal').classList.remove('flex');
+      document.getElementById('telemetryModal').classList.add('hidden');
+    }
+
+    function openReservationModal() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('resVolume').focus();
+    }
+
+    function handleReservation(e) {
+      e.preventDefault();
+      const toast = document.getElementById('toast');
+      toast.classList.remove('translate-y-32');
+      toast.classList.add('translate-y-0');
+      document.getElementById('reservationForm').reset();
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0');
+        toast.classList.add('translate-y-32');
+      }, 4000);
+    }
+  </script>
+</div></main></div>
+
+
+</body></html>

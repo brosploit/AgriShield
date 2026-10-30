@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AgriShield AI — Transport Facilities &amp; Fleet Management</title><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+</head><body class="bg-surface font-body text-on-surface">
+
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="px-space-lg mb-space-lg flex items-center gap-space-md">
+    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+      <span class="material-symbols-outlined text-[24px]">shield</span>
+    </div>
+    <span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span>
+  </div>
+  
+  <div class="px-space-lg mb-space-md">
+    <label class="text-label-sm text-on-surface-variant block mb-space-xs font-semibold">Active Role Profile</label>
+    <div class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg font-semibold flex items-center justify-between">
+      <span id="sidebar-role-badge">Transporter</span>
+      <span class="material-symbols-outlined text-primary text-[18px]">local_shipping</span>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto">
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="index.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="dashboard.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Operations Hub
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="climate.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">cloud</span>Climate Intelligence
+    </a>
+    <a aria-current="page" class="flex items-center px-space-lg py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" href="transport.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transport Facilities
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="storage.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Warehouse Fleet
+    </a>
+  </nav>
+
+  <div class="px-space-lg pt-space-md border-t border-outline-variant/30 sidebar-user-label">
+    <div class="text-body-sm text-on-surface-variant">Fleet Hub: Lasalgaon APMC</div>
+    <div class="text-label-sm text-primary font-medium mt-1">142 GPS Units Live</div>
+  </div>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg">
+    <div class="flex items-center gap-space-md">
+      <div class="flex items-center text-body-md text-on-surface-variant gap-space-xs">
+        <span class="hover:text-on-surface cursor-pointer">Logistics</span>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-on-surface font-medium">Fleet &amp; Dispatch</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-md">
+      <div class="api-health-badge">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-800">Checking API...</span>
+      </div>
+      <div class="user-profile-slot"></div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg">
+    <div class="flex flex-col w-full pb-16">
+      <!-- Top Header -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-space-xl gap-space-md">
+        <div>
+          <div class="flex items-center gap-space-xs mb-space-xs">
+            <span class="text-label-sm text-primary uppercase font-bold">Sector 4 Logistics Hub</span>
+            <span class="text-on-surface-variant">•</span>
+            <span class="text-label-sm text-on-surface-variant">Nashik–Mumbai Agro-Corridor</span>
+          </div>
+          <h1 class="text-headline-xl text-on-surface font-headline-xl font-semibold">Transport Facilities &amp; Fleet Management</h1>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <button class="bg-primary hover:bg-primary-container text-on-primary font-label-lg px-space-lg py-space-md rounded-xl transition-all shadow-md flex items-center gap-space-sm cursor-pointer" onclick="openBookingModal('Nashik Shippers Co-op Ltd')">
+            <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+            Schedule New Transport
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-xl">
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden border border-outline-variant/20">
+          <div class="flex justify-between items-start mb-space-md">
+            <div>
+              <p class="text-label-md text-on-surface-variant mb-space-xs font-medium">Active Fleet</p>
+              <h3 class="text-headline-lg text-on-surface font-headline-lg font-bold">142 Trucks</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[24px]">airport_shuttle</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs text-body-sm text-secondary font-semibold">
+            <span class="material-symbols-outlined text-[16px]">trending_up</span>
+            <span>+12% capacity available today</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden border border-outline-variant/20">
+          <div class="flex justify-between items-start mb-space-md">
+            <div>
+              <p class="text-label-md text-on-surface-variant mb-space-xs font-medium">Reefer Cold-Chain</p>
+              <h3 class="text-headline-lg text-on-surface font-headline-lg font-bold">68 Units</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+              <span class="material-symbols-outlined text-[24px]">ac_unit</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant font-medium">
+            <span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            <span>Avg temp 2.4°C IoT verified</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden border border-outline-variant/20">
+          <div class="flex justify-between items-start mb-space-md">
+            <div>
+              <p class="text-label-md text-on-surface-variant mb-space-xs font-medium">Driver Safety Index</p>
+              <h3 class="text-headline-lg text-on-surface font-headline-lg font-bold">4.89 / 5</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+              <span class="material-symbols-outlined text-[24px]">star</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs text-body-sm text-secondary font-semibold">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            <span>Verified Aadhaar &amp; permit</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl shadow-sm relative overflow-hidden border border-outline-variant/20">
+          <div class="flex justify-between items-start mb-space-md">
+            <div>
+              <p class="text-label-md text-on-surface-variant mb-space-xs font-medium">Corridor Status</p>
+              <h3 class="text-headline-lg text-on-surface font-headline-lg font-bold">NH-60 Green</h3>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[24px]">route</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs text-body-sm text-secondary font-semibold">
+            <span class="material-symbols-outlined text-[16px]">bolt</span>
+            <span>Nashik–Mumbai clear: 3.5 hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Providers & Live Dispatches -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg mb-space-xl">
+        <div class="lg:col-span-2 bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col border border-outline-variant/20">
+          <div class="flex justify-between items-center mb-space-lg">
+            <h2 class="text-headline-md text-on-surface font-headline-md font-semibold">Verified Transport Providers</h2>
+            <div class="flex items-center gap-space-sm">
+              <select class="bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none cursor-pointer" id="vehicleFilter" onchange="filterProviders()">
+                <option value="all">All Vehicle Types</option>
+                <option value="reefer">Refrigerated Trucks (Cold-Chain)</option>
+                <option value="heavy">Heavy Haulers (30T+)</option>
+                <option value="mini">Mini-Trucks (Small Surplus)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="space-y-space-md flex-1" id="providerList">
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card border border-outline-variant/20" data-type="reefer">
+              <div class="flex items-center gap-space-md">
+                <div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md font-bold shrink-0">
+                  NS
+                </div>
+                <div>
+                  <div class="flex items-center gap-space-sm mb-space-xs">
+                    <h4 class="text-headline-sm text-on-surface font-semibold">Nashik Shippers Co-op Ltd</h4>
+                    <span class="bg-secondary-fixed text-on-secondary-fixed text-label-sm px-space-xs py-0.5 rounded font-bold">Verified Cold-Chain</span>
+                  </div>
+                  <p class="text-body-sm text-on-surface-variant mb-space-xs">Refrigerated Containers • 15 Ton Capacity • IoT Temp Monitoring</p>
+                  <div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+                    <span class="flex items-center gap-1 text-primary font-bold"><span class="material-symbols-outlined text-[16px]">star</span> 4.9 (124 trips)</span>
+                    <span>•</span>
+                    <span>Base: Lasalgaon Hub</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+                <span class="text-headline-sm text-primary font-bold">₹24 / km</span>
+                <button class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all cursor-pointer" onclick="openBookingModal('Nashik Shippers Co-op Ltd', true)">
+                  Book Vehicle
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card border border-outline-variant/20" data-type="heavy">
+              <div class="flex items-center gap-space-md">
+                <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md font-bold shrink-0">
+                  AH
+                </div>
+                <div>
+                  <div class="flex items-center gap-space-sm mb-space-xs">
+                    <h4 class="text-headline-sm text-on-surface font-semibold">AgroHaul Logistics Inc</h4>
+                    <span class="bg-tertiary-fixed text-on-tertiary-fixed text-label-sm px-space-xs py-0.5 rounded font-bold">Heavy Hauler</span>
+                  </div>
+                  <p class="text-body-sm text-on-surface-variant mb-space-xs">Multi-Axle Flatbeds • 32 Ton Capacity • Grain &amp; Dry Bulk</p>
+                  <div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+                    <span class="flex items-center gap-1 text-primary font-bold"><span class="material-symbols-outlined text-[16px]">star</span> 4.8 (98 trips)</span>
+                    <span>•</span>
+                    <span>Base: Pimpalgaon APMC</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+                <span class="text-headline-sm text-primary font-bold">₹38 / km</span>
+                <button class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all cursor-pointer" onclick="openBookingModal('AgroHaul Logistics Inc', false)">
+                  Book Vehicle
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md provider-card border border-outline-variant/20" data-type="mini">
+              <div class="flex items-center gap-space-md">
+                <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md font-bold shrink-0">
+                  QE
+                </div>
+                <div>
+                  <div class="flex items-center gap-space-sm mb-space-xs">
+                    <h4 class="text-headline-sm text-on-surface font-semibold">QuickExpress Farm-Gate</h4>
+                    <span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-space-xs py-0.5 rounded font-bold">Mini-Truck</span>
+                  </div>
+                  <p class="text-body-sm text-on-surface-variant mb-space-xs">Covered Mahindra Bolero • 3.5 Ton Capacity • Rapid Rural Pickup</p>
+                  <div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+                    <span class="flex items-center gap-1 text-primary font-bold"><span class="material-symbols-outlined text-[16px]">star</span> 4.9 (240 trips)</span>
+                    <span>•</span>
+                    <span>Base: Dindori Sector 4</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-space-sm">
+                <span class="text-headline-sm text-primary font-bold">₹16 / km</span>
+                <button class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all cursor-pointer" onclick="openBookingModal('QuickExpress Farm-Gate', false)">
+                  Book Vehicle
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Delivery Tracking Side Panel (Fully Functional) -->
+        <div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-xs">
+            <h2 class="text-headline-md text-on-surface font-semibold">Active Dispatches</h2>
+            <button onclick="openBookingModal()" class="text-xs font-bold text-primary hover:underline cursor-pointer">+ New</button>
+          </div>
+          <p class="text-body-sm text-on-surface-variant mb-space-md">Real-time GPS routing and OTP settlement</p>
+          
+          <div class="space-y-space-md flex-1 overflow-y-auto" id="active-dispatches-list">
+            <!-- Populated dynamically by renderDispatches() -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Booking Modal -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" id="bookingModal">
+  <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 w-full max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="closeBookingModal()">
+      <span class="material-symbols-outlined text-[24px]">close</span>
+    </button>
+    <div class="flex items-center gap-space-xs text-primary font-bold text-xs uppercase mb-1">
+      <span class="material-symbols-outlined text-[18px]">local_shipping</span> Transport Quotation &amp; Dispatch
+    </div>
+    <h3 class="text-xl font-bold text-on-surface mb-1">Schedule Rural Haulage</h3>
+    <p class="text-xs text-on-surface-variant mb-4">Calculates road distance via Haversine kinetics and generates cryptographic OTP.</p>
+
+    <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold text-on-surface-variant mb-1">Assigned Fleet Carrier</label>
+        <input id="modalProvider" class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none font-medium" type="text" value="Nashik Shippers Co-op Ltd">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Origin Cluster</label>
+          <select id="book-origin" onchange="updateQuote()" class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none">
+            <option value="nashik">Nashik Sector 4</option>
+            <option value="manchar">Manchar Farm Gate</option>
+            <option value="narayangaon">Narayangaon Hub</option>
+            <option value="dindori">Dindori Cooperative</option>
+            <option value="pimpalgaon">Pimpalgaon APMC</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Destination</label>
+          <select id="book-dest" onchange="updateQuote()" class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none">
+            <option value="mumbai">Mumbai (Vashi APMC / Port)</option>
+            <option value="pune">Pune Market Yard</option>
+            <option value="nashik">Nashik Central Godown</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Crop Variety</label>
+          <input id="book-crop" class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none" type="text" value="Tomatoes (Grade A)" required>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-on-surface-variant mb-1">Weight (Tons)</label>
+          <input id="book-weight" oninput="updateQuote()" class="w-full bg-surface-container-high text-on-surface px-3 py-2 rounded-lg text-sm outline-none" type="number" value="8" min="0.5" step="0.5" required>
+        </div>
+      </div>
+
+      <div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-on-surface block">Reefer Cold Chain Container</span>
+          <span class="text-[11px] text-on-surface-variant">Continuous refrigeration to arrest thermal decay</span>
+        </div>
+        <input id="book-cold" onchange="updateQuote()" type="checkbox" checked class="w-4 h-4 accent-primary cursor-pointer">
+      </div>
+
+      <!-- Real-time Quote Card -->
+      <div class="p-4 rounded-xl bg-surface-container-low border border-primary/20">
+        <div class="flex justify-between items-center text-xs text-on-surface-variant">
+          <span>Calculated Road Distance:</span>
+          <span class="font-bold text-on-surface" id="quote-km">168 km</span>
+        </div>
+        <div class="flex justify-between items-center text-xs text-on-surface-variant mt-1">
+          <span>Est. Transit Duration:</span>
+          <span class="font-bold text-on-surface" id="quote-hours">4.0 hrs</span>
+        </div>
+        <div class="flex justify-between items-center text-base font-bold text-primary mt-2 pt-2 border-t border-outline-variant/20">
+          <span>Total Haulage Rate:</span>
+          <span id="quote-cost">₹6,451</span>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-3 border-t border-outline-variant/20">
+        <button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-semibold hover:bg-surface-container-highest cursor-pointer" onclick="closeBookingModal()" type="button">Cancel</button>
+        <button class="bg-primary hover:bg-primary-container text-on-primary text-xs font-bold px-4 py-2 rounded-lg transition-all shadow-md cursor-pointer flex items-center gap-1.5" type="submit">
+          <span class="material-symbols-outlined text-[16px]">verified</span> Confirm &amp; Dispatch
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+  let defaultShipments = [
+    {
+      id: "SH-4902",
+      provider: "Nashik Shippers Co-op Ltd",
+      crop: "Tomato Lot (8 Tons)",
+      route: "Nashik Sector 4 → Vashi APMC, Mumbai",
+      status: "IN TRANSIT",
+      distance: "114 / 168 km",
+      temp: "3.2°C (Optimal)",
+      otp: "849201"
+    },
+    {
+      id: "SH-4890",
+      provider: "AgroHaul Logistics Inc",
+      crop: "Wheat Bulk Lot (22 Tons)",
+      route: "Junnar Hub → Pune Central Godown",
+      status: "DELIVERED",
+      distance: "84 / 84 km",
+      temp: "Ambient Dry",
+      otp: "318490"
+    }
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateQuote();
+    renderDispatches();
+  });
+
+  function getShipments() {
+    try {
+      const raw = localStorage.getItem("agrishield_shipments");
+      return raw ? JSON.parse(raw) : defaultShipments;
+    } catch (_) {
+      return defaultShipments;
+    }
+  }
+
+  function saveShipments(list) {
+    localStorage.setItem("agrishield_shipments", JSON.stringify(list));
+  }
+
+  function renderDispatches() {
+    const list = getShipments();
+    const container = document.getElementById("active-dispatches-list");
+    container.innerHTML = "";
+
+    list.forEach(ship => {
+      const card = document.createElement("div");
+      card.className = "bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/20";
+      
+      const isInTransit = ship.status === "IN TRANSIT";
+      const statusBadge = isInTransit 
+        ? `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 animate-pulse">IN TRANSIT</span>`
+        : `<span class="px-2 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">DELIVERED</span>`;
+
+      card.innerHTML = `
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-label-sm font-bold text-primary">SHIPMENT #${ship.id}</span>
+          ${statusBadge}
+        </div>
+        <div class="text-body-md font-semibold text-on-surface">${ship.crop}</div>
+        <div class="text-xs text-on-surface-variant">${ship.route}</div>
+        
+        <div class="mt-space-md pt-space-xs border-t border-outline-variant/20 flex justify-between text-xs">
+          <span>Carrier:</span>
+          <span class="font-bold text-on-surface">${ship.provider}</span>
+        </div>
+        <div class="flex justify-between text-xs mt-1">
+          <span>Reefer Temp:</span>
+          <span class="font-bold text-primary">${ship.temp}</span>
+        </div>
+        <div class="flex justify-between items-center text-xs mt-2 pt-2 border-t border-outline-variant/10">
+          <div>
+            <span class="text-on-surface-variant">Delivery OTP:</span>
+            <span class="font-mono font-bold text-on-surface bg-surface-container px-1.5 py-0.5 rounded ml-1">${ship.otp}</span>
+          </div>
+          ${isInTransit ? `<button onclick="verifyShipmentOtp('${ship.id}', '${ship.otp}')" class="px-2 py-1 bg-primary text-on-primary rounded text-[11px] font-bold hover:bg-primary-container cursor-pointer">Verify Delivery</button>` : `<span class="text-[11px] text-blue-700 font-bold">✓ Escrow Settled</span>`}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function verifyShipmentOtp(shipmentId, correctOtp) {
+    const input = prompt(`Enter 6-digit delivery confirmation OTP for shipment #${shipmentId}:`);
+    if (!input) return;
+    if (input.trim() === correctOtp) {
+      const list = getShipments();
+      const target = list.find(s => s.id === shipmentId);
+      if (target) {
+        target.status = "DELIVERED";
+        saveShipments(list);
+        renderDispatches();
+        alert(`Success! Delivery confirmed for shipment #${shipmentId}. Escrow payment released to carrier.`);
+      }
+    } else {
+      alert("Invalid OTP! Cryptographic delivery verification failed.");
+    }
+  }
+
+  function openBookingModal(providerName, isCold = true) {
+    if (providerName) {
+      document.getElementById("modalProvider").value = providerName;
+    }
+    document.getElementById("book-cold").checked = isCold;
+    updateQuote();
+    document.getElementById("bookingModal").classList.remove("hidden");
+  }
+
+  function closeBookingModal() {
+    document.getElementById("bookingModal").classList.add("hidden");
+  }
+
+  function updateQuote() {
+    const origin = document.getElementById("book-origin").value;
+    const dest = document.getElementById("book-dest").value;
+    const weight = parseFloat(document.getElementById("book-weight").value) || 5;
+    const cold = document.getElementById("book-cold").checked;
+
+    const quote = window.AgriShieldAPI.calculateTransportQuote(origin, dest, weight, cold ? "reefer" : "mini_truck");
+    document.getElementById("quote-km").innerText = `${quote.roadKm} km`;
+    document.getElementById("quote-hours").innerText = `${quote.estimatedHours} hrs`;
+    document.getElementById("quote-cost").innerText = `₹${quote.estimatedCostInr.toLocaleString("en-IN")}`;
+  }
+
+  function handleBookingSubmit(event) {
+    event.preventDefault();
+    const provider = document.getElementById("modalProvider").value;
+    const origin = document.getElementById("book-origin").value;
+    const dest = document.getElementById("book-dest").value;
+    const crop = document.getElementById("book-crop").value;
+    const weight = document.getElementById("book-weight").value;
+    const cold = document.getElementById("book-cold").checked;
+
+    const quote = window.AgriShieldAPI.calculateTransportQuote(origin, dest, parseFloat(weight), cold ? "reefer" : "mini_truck");
+    
+    const newShipment = {
+      id: "SH-" + Math.floor(1000 + Math.random() * 9000),
+      provider: provider,
+      crop: `${crop} (${weight} Tons)`,
+      route: `${origin.toUpperCase()} → ${dest.toUpperCase()}`,
+      status: "IN TRANSIT",
+      distance: `0 / ${quote.roadKm} km`,
+      temp: cold ? "2.8°C (Reefer Active)" : "Ambient Clean",
+      otp: quote.deliveryOtp
+    };
+
+    const list = getShipments();
+    list.unshift(newShipment);
+    saveShipments(list);
+    renderDispatches();
+
+    closeBookingModal();
+    alert(`Vehicle successfully dispatched with ${provider}!\n\nDelivery Confirmation OTP is: ${newShipment.otp}\nGive this 6-digit OTP to the recipient at destination to release payment.`);
+  }
+
+  function filterProviders() {
+    const filter = document.getElementById("vehicleFilter").value;
+    const cards = document.querySelectorAll(".provider-card");
+    cards.forEach(card => {
+      if (filter === "all" || card.dataset.type === filter) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
+</body></html>

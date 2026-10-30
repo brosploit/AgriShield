@@ -1,0 +1,800 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AgriShield AI — Operations Hub</title><meta content="web_dashboard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#4ce171", "inverse-primary": "#8bd79b", "on-secondary-fixed-variant": "#00531f", "surface-tint": "#1f6c3a", "on-primary": "#ffffff", "surface-variant": "#e0e4dc", "surface-container-lowest": "#ffffff", "on-surface-variant": "#404940", "outline-variant": "#bfc9bd", "surface-bright": "#f7faf3", "on-primary-fixed-variant": "#005226", "primary-fixed-dim": "#8bd79b", "on-primary-fixed": "#00210b", "inverse-surface": "#2d322d", primary: "#004c22", background: "#f7faf3", "surface-dim": "#d7dbd4", outline: "#707a6f", "on-secondary-fixed": "#002108", "inverse-on-surface": "#eef2eb", "on-error": "#ffffff", "secondary-fixed": "#6cff8a", "secondary-container": "#6cff8a", "primary-container": "#166534", "tertiary-fixed": "#6dfe9c", "on-tertiary": "#ffffff", error: "#ba1a1a", "surface-container-low": "#f1f5ed", "on-error-container": "#93000a", "on-tertiary-container": "#56e989", "on-surface": "#181d18", secondary: "#006e2b", surface: "#f7faf3", tertiary: "#004c23", "on-secondary-container": "#00742e", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210c", "on-tertiary-fixed-variant": "#005227", "tertiary-container": "#006632", "on-background": "#181d18", "surface-container-high": "#e6e9e2", "tertiary-fixed-dim": "#4de082", "surface-container-highest": "#e0e4dc", "primary-fixed": "#a6f4b5", "on-primary-container": "#93e0a2", "surface-container": "#ebefe8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"space-xl": "48px", gutter: "24px", margin: "32px", "space-md": "16px", "space-sm": "8px", "space-xs": "4px", "space-lg": "24px"}, fontFamily: {"headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"], body: ["Inter"], label: ["Inter"]}}}}
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+</head><body class="bg-surface font-body text-on-surface">
+
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="px-space-lg mb-space-lg flex items-center gap-space-md">
+    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
+      <span class="material-symbols-outlined text-[24px]">shield</span>
+    </div>
+    <span class="text-headline-sm font-headline-sm text-primary">AgriShield AI</span>
+  </div>
+  
+  <div class="px-space-lg mb-space-md">
+    <label class="text-label-sm text-on-surface-variant block mb-space-xs font-semibold">Active Role Profile</label>
+    <div class="w-full bg-surface-container-high text-on-surface text-body-md px-space-md py-space-sm rounded-lg font-semibold flex items-center justify-between">
+      <span id="sidebar-role-badge">Farmer</span>
+      <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-space-md space-y-space-xs overflow-y-auto">
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="index.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">home</span>Landing Page
+    </a>
+    <a aria-current="page" class="flex items-center px-space-lg py-space-md rounded-lg transition-all bg-primary-container text-on-primary-container font-bold" href="dashboard.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">dashboard</span>Operations Hub
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="climate.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">cloud</span>Climate Intelligence
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="transport.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">local_shipping</span>Transport Facilities
+    </a>
+    <a class="flex items-center px-space-lg py-space-md rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-lg" href="storage.html">
+      <span class="material-symbols-outlined mr-space-md text-[20px]">warehouse</span>Warehouse Fleet
+    </a>
+  </nav>
+
+  <div class="px-space-lg pt-space-md border-t border-outline-variant/30 sidebar-user-label">
+    <div class="text-body-sm text-on-surface-variant">Regional Telemetry Hub</div>
+    <div class="text-label-sm text-primary font-medium mt-1">Connecting...</div>
+  </div>
+</aside>
+
+<div class="pl-72">
+  <header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg">
+    <div class="flex items-center gap-space-md">
+      <div class="flex items-center text-body-md text-on-surface-variant gap-space-xs">
+        <span class="hover:text-on-surface cursor-pointer">Operations Hub</span>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <span class="text-on-surface font-medium">Real-Time Biological Telemetry</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-md">
+      <div class="api-health-badge">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-emerald-800">API Connected</span>
+      </div>
+
+      <!-- Notifications Dropdown Trigger -->
+      <div class="relative">
+        <button onclick="toggleNotifications()" class="relative p-space-xs text-on-surface-variant hover:text-on-surface cursor-pointer rounded-lg hover:bg-surface-container-high">
+          <span class="material-symbols-outlined text-[20px]">notifications</span>
+          <span id="notif-badge" class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+        </button>
+
+        <div id="notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 z-50 p-3">
+          <div class="flex items-center justify-between pb-2 border-b border-surface-container-high mb-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-on-surface">Telemetry Alerts</span>
+            <span class="text-[11px] text-primary cursor-pointer hover:underline" onclick="clearNotifs()">Clear</span>
+          </div>
+          <div id="notif-list" class="space-y-2 text-xs text-on-surface-variant">
+            <div class="p-2 bg-emerald-50 rounded-lg text-emerald-900 border border-emerald-100">
+              <span class="font-bold block">🌾 Welcome to AgriShield</span>
+              Real-time biological monitoring is active for your account.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Profile & Sign Out Slot -->
+      <div class="user-profile-slot"></div>
+    </div>
+  </header>
+
+  <main class="relative pt-16 bg-surface min-h-[calc(100vh-4rem)] p-space-lg">
+    <div class="flex flex-col w-full pb-16">
+      
+      <!-- Top Welcome Banner -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+        <div>
+          <div class="flex items-center gap-space-xs text-label-sm uppercase tracking-wider text-primary mb-space-xs font-semibold">
+            <span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+            <span id="user-location-banner">Operations Hub • Live Telemetry</span>
+          </div>
+          <h1 class="text-headline-xl font-headline-xl text-on-surface" id="greeting-title">Welcome</h1>
+          <p class="text-body-lg text-on-surface-variant mt-space-xs">Here is your verified harvest inventory and biological degradation status.</p>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-sm rounded-lg text-label-lg hover:bg-primary-container transition-all shadow-sm cursor-pointer" onclick="openCropModal()">
+            <span class="material-symbols-outlined text-[18px]">add_circle</span>
+            Register New Crop
+          </button>
+          <button class="flex items-center gap-space-xs bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg text-label-lg hover:bg-surface-container-highest transition-all cursor-pointer font-semibold" onclick="openFreshnessModal()">
+            <span class="material-symbols-outlined text-[18px] text-primary">eco</span>
+            Assess Freshness (AI)
+          </button>
+        </div>
+      </div>
+
+      <!-- Real Summary Cards Grid (Calculated from Real Data) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+        <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Registered Crops</span>
+            <div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[22px]">agriculture</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-headline-lg font-headline-lg text-on-surface" id="stat-active-batches">0 Active Batches</div>
+            <div class="text-body-sm text-primary mt-space-xs font-medium" id="stat-total-yield">0.0 Tons total yield</div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Available Surplus</span>
+            <div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[22px]">storefront</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-headline-lg font-headline-lg text-on-surface" id="stat-surplus-qty">0.0 Tons</div>
+            <div class="text-body-sm text-secondary mt-space-xs font-medium">Ready for bulk pooling</div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Matched Buyer Demands</span>
+            <div class="w-10 h-10 rounded-lg bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary">
+              <span class="material-symbols-outlined text-[22px]">local_offer</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-headline-lg font-headline-lg text-on-surface" id="stat-buyer-offers">3 Inquiries</div>
+            <div class="text-body-sm text-tertiary mt-space-xs font-medium">Avg +14% above APMC Mandi</div>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between border border-outline-variant/20">
+          <div class="flex items-center justify-between mb-space-md">
+            <span class="text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Deterioration Risk</span>
+            <div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
+              <span class="material-symbols-outlined text-[22px]">warning</span>
+            </div>
+          </div>
+          <div>
+            <div class="text-headline-lg font-headline-lg text-on-surface" id="stat-risk-batches">0 Batches</div>
+            <div class="text-body-sm text-error mt-space-xs font-medium" id="stat-risk-text">All crops safe</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Layout: Table & Real Guidance -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-xl">
+        <div class="lg:col-span-8 space-y-space-xl">
+          <!-- Active Crop Inventory Table (User Defined Real Data) -->
+          <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-outline-variant/20">
+            <div class="flex items-center justify-between mb-space-lg">
+              <div>
+                <h2 class="text-headline-md font-headline-md text-on-surface font-semibold">Active Harvest Inventory &amp; Telemetry</h2>
+                <p class="text-body-sm text-on-surface-variant">Real-time biological degradation status based on temperature kinetics ($Q_{10}$)</p>
+              </div>
+              <button onclick="openCropModal()" class="text-primary text-label-md font-semibold hover:underline flex items-center gap-1 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">add_circle</span> Add Batch
+              </button>
+            </div>
+
+            <!-- Empty State Container -->
+            <div id="empty-inventory-state" class="p-8 text-center bg-surface-container-low rounded-xl border border-dashed border-outline-variant/50 hidden">
+              <div class="w-12 h-12 mx-auto rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3">
+                <span class="material-symbols-outlined text-3xl">inventory_2</span>
+              </div>
+              <h3 class="text-base font-bold text-on-surface">No Crop Batches Registered Yet</h3>
+              <p class="text-sm text-on-surface-variant max-w-md mx-auto mt-1 mb-4">
+                You haven't defined any produce batches yet. Click "Register New Crop" to enter your harvest parameters, storage conditions, and calculate biological deterioration risk.
+              </p>
+              <button onclick="openCropModal()" class="px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:bg-primary-container transition-all shadow-sm inline-flex items-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">add</span> Register First Crop Batch
+              </button>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="overflow-x-auto" id="table-container">
+              <table class="w-full text-left border-collapse" id="crop-inventory-table">
+                <thead>
+                  <tr class="border-b border-surface-container text-label-sm text-on-surface-variant">
+                    <th class="py-space-sm px-space-md">Crop &amp; Batch</th>
+                    <th class="py-space-sm px-space-md">Quantity</th>
+                    <th class="py-space-sm px-space-md">Facility &amp; Climate</th>
+                    <th class="py-space-sm px-space-md">Calculated Risk</th>
+                    <th class="py-space-sm px-space-md text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="text-body-md text-on-surface divide-y divide-surface-container" id="inventory-tbody">
+                  <!-- Populated dynamically by renderInventoryTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Verified Buyer Opportunities -->
+          <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-outline-variant/20">
+            <div class="flex items-center justify-between mb-space-lg">
+              <div>
+                <h2 class="text-headline-md font-headline-md text-on-surface font-semibold">Active Verified Commercial Bids</h2>
+                <p class="text-body-sm text-on-surface-variant">Institutional buyers with verified escrow contracts</p>
+              </div>
+            </div>
+            <div class="space-y-space-md" id="buyer-bids-container">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low border border-outline-variant/20 gap-3">
+                <div class="flex items-center gap-space-md">
+                  <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-bold">FM</div>
+                  <div>
+                    <div class="font-semibold text-on-surface">FreshMart Supermarket Chain (Mumbai)</div>
+                    <div class="text-body-sm text-on-surface-variant">Target: Tomatoes / Perishables • Requirement: 10 Tons</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end gap-4">
+                  <div class="text-right">
+                    <div class="text-headline-sm font-bold text-primary">₹24.50 / kg</div>
+                    <div class="text-label-sm text-secondary font-semibold">+18% above Mandi</div>
+                  </div>
+                  <button onclick="acceptBuyerBid('FreshMart Chain', '₹24.50/kg')" class="bg-primary text-on-primary px-space-md py-space-xs rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all cursor-pointer">Accept Bid</button>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between p-space-md rounded-xl bg-surface-container-low border border-outline-variant/20 gap-3">
+                <div class="flex items-center gap-space-md">
+                  <div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">EX</div>
+                  <div>
+                    <div class="font-semibold text-on-surface">AgroExport Logistics (JNPT Hub)</div>
+                    <div class="text-body-sm text-on-surface-variant">Target: Export Quality Grapes &amp; Mangoes • 5.0 Tons</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between sm:justify-end gap-4">
+                  <div class="text-right">
+                    <div class="text-headline-sm font-bold text-primary">₹145.00 / kg</div>
+                    <div class="text-label-sm text-secondary font-semibold">Grade A Premium</div>
+                  </div>
+                  <button onclick="acceptBuyerBid('AgroExport Logistics', '₹145.00/kg')" class="bg-primary text-on-primary px-space-md py-space-xs rounded-lg text-label-md font-semibold hover:bg-primary-container transition-all cursor-pointer">Accept Bid</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: AI Guidance & Gauges -->
+        <div class="lg:col-span-4 space-y-space-xl">
+          <!-- Dynamic AI Recommendation Box -->
+          <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-primary/20">
+            <div class="flex items-center gap-space-xs text-primary font-bold text-label-sm uppercase mb-space-xs">
+              <span class="material-symbols-outlined text-[18px]">psychology</span> Unified Biological Recommendation
+            </div>
+            <h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold mb-space-xs">Agronomic Guidance</h3>
+            <p class="text-body-sm text-on-surface-variant mb-space-md" id="ai-guidance-intro">
+              Calculated dynamically from your actual produce storage temperatures and moisture stress.
+            </p>
+
+            <div id="ai-guidance-card" class="p-space-md rounded-xl bg-primary-container/15 border border-primary-container/30 mb-space-md">
+              <div class="flex items-center gap-space-xs text-primary font-bold text-label-sm uppercase" id="ai-guidance-badge">
+                <span class="material-symbols-outlined text-[16px]">info</span> SYSTEM READY
+              </div>
+              <p class="text-body-sm text-on-surface mt-1" id="ai-guidance-text">
+                Register crop batches with temperature and storage duration to receive real-time degradation forecasting and freight optimization warnings.
+              </p>
+            </div>
+
+            <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/20">
+              <div class="text-xs font-bold text-on-surface mb-2 uppercase tracking-wider">Quick Actions</div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <button onclick="openFreshnessModal()" class="p-2 bg-surface-container-high hover:bg-surface-container-highest rounded-lg font-medium text-left flex items-center gap-1.5 cursor-pointer">
+                  <span class="material-symbols-outlined text-primary text-[16px]">calculate</span> Run Simulation
+                </button>
+                <a href="transport.html" class="p-2 bg-surface-container-high hover:bg-surface-container-highest rounded-lg font-medium text-left flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-primary text-[16px]">local_shipping</span> Book Reefer
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Freshness Health Index Breakdown -->
+          <div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-outline-variant/20">
+            <h2 class="text-headline-md font-headline-md text-on-surface font-semibold mb-space-xs">Inventory Health Index</h2>
+            <p class="text-body-sm text-on-surface-variant mb-space-lg">Dynamic biological risk distribution across registered lots</p>
+            <div class="space-y-space-md">
+              <div>
+                <div class="flex justify-between text-body-sm mb-space-xs font-medium">
+                  <span class="text-primary font-semibold">Low Risk (Safe)</span>
+                  <span id="pct-low">100%</span>
+                </div>
+                <div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+                  <div class="bg-primary h-full rounded-full transition-all duration-500" id="bar-low" style="width: 100%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-body-sm mb-space-xs font-medium">
+                  <span class="text-amber-700 font-semibold">Moderate Risk</span>
+                  <span id="pct-mod">0%</span>
+                </div>
+                <div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+                  <div class="bg-amber-500 h-full rounded-full transition-all duration-500" id="bar-mod" style="width: 0%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-body-sm mb-space-xs font-medium">
+                  <span class="text-error font-semibold">Critical Deterioration</span>
+                  <span id="pct-crit">0%</span>
+                </div>
+                <div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden">
+                  <div class="bg-error h-full rounded-full transition-all duration-500" id="bar-crit" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ==============================================================================
+ * Comprehensive Crop Registration Modal (Asks for ALL real parameters)
+ * ============================================================================== -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" id="cropModal">
+  <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 w-full max-w-lg shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="closeCropModal()">
+      <span class="material-symbols-outlined text-[24px]">close</span>
+    </button>
+    <div class="flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-wider mb-1">
+      <span class="material-symbols-outlined text-[18px]">add_circle</span> Crop Enrollment
+    </div>
+    <h3 class="text-xl font-bold text-on-surface mb-1">Register New Harvest Lot</h3>
+    <p class="text-xs text-on-surface-variant mb-6">Enter actual field telemetry to compute biological kinetics ($Q_{10}$) and remaining safe shelf life.</p>
+    
+    <form onsubmit="handleRealCropSubmit(event)" class="space-y-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Crop Variety</label>
+          <select id="new-crop-name" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none font-medium">
+            <option value="Tomato" selected>Tomato (Perishable)</option>
+            <option value="Onion">Red Onion (Durable)</option>
+            <option value="Wheat">Wheat Grain (Durable)</option>
+            <option value="Potato">Potato (Perishable)</option>
+            <option value="Mango">Alphonso Mango (Fruit)</option>
+            <option value="Grapes">Grapes (Fruit)</option>
+            <option value="Rice">Paddy Rice (Grain)</option>
+            <option value="Banana">Banana (Perishable)</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Batch Code / Lot ID</label>
+          <input id="new-crop-batch" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" required type="text">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Quantity (Metric Tons)</label>
+          <input id="new-crop-qty" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" placeholder="e.g. 8.5" step="0.1" min="0.1" required type="number">
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Hours Since Harvest</label>
+          <input id="new-crop-hours" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" value="18" min="1" required type="number">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Current Temperature (°C)</label>
+          <input id="new-crop-temp" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" value="28" step="0.5" required type="number">
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Relative Humidity (%)</label>
+          <input id="new-crop-hum" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" value="65" min="10" max="100" required type="number">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Storage Facility Type</label>
+          <select id="new-crop-storage" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none">
+            <option value="traditional_shed" selected>Traditional Shed (Ambient)</option>
+            <option value="ventilated_godown">Ventilated Godown</option>
+            <option value="cold_storage">Cold Storage (Controlled)</option>
+            <option value="hermetic_silo">Hermetic Silo</option>
+            <option value="open_air">Open Air / Field Gate</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Storage Location Name</label>
+          <input id="new-crop-location" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" placeholder="e.g. Nashik Farm Shed #1" required type="text">
+        </div>
+      </div>
+
+      <div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-on-surface block">Regional Surplus Pooling</span>
+          <span class="text-[11px] text-on-surface-variant">Allow neighboring farms to group this lot for transport freight discounts</span>
+        </div>
+        <input type="checkbox" id="new-crop-surplus" class="w-4 h-4 accent-primary cursor-pointer" checked>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-3 border-t border-outline-variant/20">
+        <button type="button" class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-semibold hover:bg-surface-container-highest cursor-pointer" onclick="closeCropModal()">Cancel</button>
+        <button type="submit" class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary-container transition-all cursor-pointer flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">calculate</span>
+          Calculate Kinetics &amp; Enroll Batch
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ==============================================================================
+ * Interactive AI Freshness Assessment Modal
+ * ============================================================================== -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" id="freshnessModal">
+  <div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 w-full max-w-xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="closeFreshnessModal()">
+      <span class="material-symbols-outlined text-[24px]">close</span>
+    </button>
+    <div class="flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-wider mb-1">
+      <span class="material-symbols-outlined text-[18px]">psychology</span> AI Freshness Intelligence Engine
+    </div>
+    <h3 class="text-xl font-bold text-on-surface mb-1">Produce Deterioration Simulator</h3>
+    <p class="text-xs text-on-surface-variant mb-6">Computes biological respiration acceleration ($Q_{10}$) and Vapor Pressure Deficit (VPD).</p>
+
+    <div class="space-y-4">
+      <div>
+        <label class="text-xs font-semibold text-on-surface-variant block mb-1">Target Crop</label>
+        <select id="assess-crop" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none font-medium">
+          <option value="Tomato" selected>Tomato (10d optimal shelf life)</option>
+          <option value="Onion">Red Onion (120d optimal shelf life)</option>
+          <option value="Wheat">Wheat Grain (365d optimal shelf life)</option>
+          <option value="Potato">Potato (90d optimal shelf life)</option>
+          <option value="Mango">Alphonso Mango (14d optimal shelf life)</option>
+          <option value="Grapes">Grapes (21d optimal shelf life)</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Temperature (°C)</label>
+          <input id="assess-temp" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" type="number" value="30" step="0.5">
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Relative Humidity (%)</label>
+          <input id="assess-humidity" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" type="number" value="60" min="10" max="100">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Facility Type</label>
+          <select id="assess-storage" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none">
+            <option value="traditional_shed" selected>Traditional Shed</option>
+            <option value="ventilated_godown">Ventilated Godown</option>
+            <option value="cold_storage">Cold Storage</option>
+            <option value="open_air">Open Air / Yard</option>
+            <option value="hermetic_silo">Hermetic Silo</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs font-semibold text-on-surface-variant block mb-1">Elapsed Storage Hours</label>
+          <input id="assess-hours" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" type="number" value="36" min="1">
+        </div>
+      </div>
+
+      <div>
+        <label class="text-xs font-semibold text-on-surface-variant block mb-1">Lot Quantity (kg)</label>
+        <input id="assess-qty" class="w-full bg-surface-container-high text-on-surface text-sm px-3 py-2 rounded-lg outline-none" type="number" value="1000">
+      </div>
+    </div>
+
+    <!-- Live Calculation Results -->
+    <div id="assessment-result" class="mt-4 p-4 rounded-xl bg-surface-container-low border border-outline-variant/30 hidden">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs uppercase tracking-wider font-bold text-primary" id="res-source">AI Prediction</span>
+        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold" id="res-badge">Low Risk</span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-3xl font-bold" id="res-score">24%</span>
+        <span class="text-xs text-on-surface-variant">Biological Degradation Score (0–100)</span>
+      </div>
+      <div class="text-xs text-on-surface font-semibold mt-2" id="res-action"></div>
+      
+      <div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-outline-variant/20 text-xs text-on-surface-variant">
+        <div>Est. Safe Shelf Life: <span class="font-bold text-on-surface" id="res-hours">--</span></div>
+        <div>$Q_{10}$ Acceleration: <span class="font-bold text-on-surface" id="res-q10">--</span></div>
+      </div>
+
+      <!-- Option to save as inventory batch -->
+      <button onclick="saveSimulatedBatch()" class="w-full mt-3 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[16px]">save</span> Save Evaluated Produce to My Inventory
+      </button>
+    </div>
+
+    <div class="flex justify-end gap-3 mt-6">
+      <button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-semibold hover:bg-surface-container-highest cursor-pointer" onclick="closeFreshnessModal()">Close</button>
+      <button id="btn-run-assessment" class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-bold hover:bg-primary-container transition-all flex items-center gap-1 cursor-pointer" onclick="runFreshnessAssessment()">
+        <span class="material-symbols-outlined text-[16px]">calculate</span> Run AI Assessment
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script>
+  let activeUser = null;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    activeUser = window.AgriShieldAPI.getCurrentUser();
+    if (activeUser) {
+      document.getElementById("greeting-title").innerText = `Welcome, ${activeUser.fullName}`;
+      document.getElementById("user-location-banner").innerText = `${activeUser.role} Hub • ${activeUser.location || "Nashik Rural"}`;
+      document.getElementById("sidebar-role-badge").innerText = activeUser.role;
+    }
+    renderInventoryTable();
+  });
+
+  function renderInventoryTable() {
+    activeUser = window.AgriShieldAPI.getCurrentUser();
+    const userId = activeUser ? activeUser.id : "guest";
+    const crops = window.AgriShieldAPI.getUserCrops(userId);
+
+    const tbody = document.getElementById("inventory-tbody");
+    const emptyState = document.getElementById("empty-inventory-state");
+    const tableContainer = document.getElementById("table-container");
+
+    // Dynamic stats calculation
+    const totalBatches = crops.length;
+    const totalYield = crops.reduce((acc, c) => acc + (parseFloat(c.quantityTons) || 0), 0).toFixed(1);
+    const surplusTons = crops.filter(c => c.isSurplus).reduce((acc, c) => acc + (parseFloat(c.quantityTons) || 0), 0).toFixed(1);
+    const riskBatches = crops.filter(c => c.bioStatus && c.bioStatus.riskScore >= 50).length;
+
+    document.getElementById("stat-active-batches").innerText = `${totalBatches} Active Batches`;
+    document.getElementById("stat-total-yield").innerText = `${totalYield} Tons total yield`;
+    document.getElementById("stat-surplus-qty").innerText = `${surplusTons} Tons`;
+    document.getElementById("stat-risk-batches").innerText = `${riskBatches} Batches`;
+    document.getElementById("stat-risk-text").innerText = riskBatches > 0 ? `${riskBatches} batches need cold chain` : `All crops in safe range`;
+
+    // Dynamic Health Bar Distribution
+    if (totalBatches > 0) {
+      const lowCount = crops.filter(c => !c.bioStatus || c.bioStatus.riskScore < 25).length;
+      const modCount = crops.filter(c => c.bioStatus && c.bioStatus.riskScore >= 25 && c.bioStatus.riskScore < 75).length;
+      const critCount = crops.filter(c => c.bioStatus && c.bioStatus.riskScore >= 75).length;
+
+      const pLow = Math.round((lowCount / totalBatches) * 100);
+      const pMod = Math.round((modCount / totalBatches) * 100);
+      const pCrit = 100 - pLow - pMod;
+
+      document.getElementById("pct-low").innerText = `${pLow}%`;
+      document.getElementById("bar-low").style.width = `${pLow}%`;
+      document.getElementById("pct-mod").innerText = `${pMod}%`;
+      document.getElementById("bar-mod").style.width = `${pMod}%`;
+      document.getElementById("pct-crit").innerText = `${pCrit}%`;
+      document.getElementById("bar-crit").style.width = `${pCrit}%`;
+    }
+
+    if (crops.length === 0) {
+      emptyState.classList.remove("hidden");
+      tableContainer.classList.add("hidden");
+      tbody.innerHTML = "";
+      return;
+    }
+
+    emptyState.classList.add("hidden");
+    tableContainer.classList.remove("hidden");
+    tbody.innerHTML = "";
+
+    crops.forEach(crop => {
+      const tr = document.createElement("tr");
+      tr.className = "hover:bg-surface-container-low transition-colors";
+
+      const risk = crop.bioStatus ? crop.bioStatus.riskScore : 10;
+      const cat = crop.bioStatus ? crop.bioStatus.riskCategory : "Low";
+      const remaining = crop.bioStatus ? crop.bioStatus.remainingHours : 120;
+      
+      let badgeStyle = "bg-emerald-100 text-emerald-800";
+      let dotStyle = "bg-emerald-600";
+      if (risk >= 75) {
+        badgeStyle = "bg-red-100 text-red-800";
+        dotStyle = "bg-red-600";
+      } else if (risk >= 50) {
+        badgeStyle = "bg-orange-100 text-orange-800";
+        dotStyle = "bg-orange-600";
+      } else if (risk >= 25) {
+        badgeStyle = "bg-amber-100 text-amber-800";
+        dotStyle = "bg-amber-600";
+      }
+
+      const facilityDisplay = crop.storageType.replace("_", " ").replace(/\b\w/g, l => l.toUpperCase());
+
+      tr.innerHTML = `
+        <td class="py-space-md px-space-md">
+          <div class="font-bold text-on-surface">${crop.cropName}</div>
+          <div class="text-xs text-on-surface-variant">${crop.batchCode} • ${crop.storageDurationHours || 24}h elapsed</div>
+        </td>
+        <td class="py-space-md px-space-md font-semibold">${crop.quantityTons} Tons</td>
+        <td class="py-space-md px-space-md">
+          <div class="text-xs font-semibold text-on-surface">${crop.storageLocation}</div>
+          <div class="text-[11px] text-on-surface-variant">${facilityDisplay} (${crop.temperatureC}°C, ${crop.humidityPct}%)</div>
+        </td>
+        <td class="py-space-md px-space-md">
+          <span class="px-2.5 py-1 rounded-full ${badgeStyle} text-xs font-bold inline-flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full ${dotStyle}"></span> ${risk}% ${cat}
+          </span>
+          <div class="text-[11px] text-on-surface-variant mt-0.5">Safe: ~${remaining}h remaining</div>
+        </td>
+        <td class="py-space-md px-space-md text-right">
+          <div class="flex items-center justify-end gap-2">
+            <button onclick="quickAssess('${crop.cropName}', ${crop.temperatureC}, ${crop.humidityPct}, '${crop.storageType}', ${crop.storageDurationHours})" class="text-primary hover:underline text-xs font-bold cursor-pointer">
+              Assess AI
+            </button>
+            <span class="text-outline-variant">|</span>
+            <button onclick="toggleSurplus('${crop.id}')" class="text-xs font-bold ${crop.isSurplus ? 'text-emerald-700 hover:text-emerald-900' : 'text-on-surface-variant hover:text-on-surface'} cursor-pointer" title="Toggle surplus pooling">
+              ${crop.isSurplus ? '✓ Pooled' : '+ Pool'}
+            </button>
+            <span class="text-outline-variant">|</span>
+            <button onclick="removeCrop('${crop.id}')" class="text-error hover:text-red-800 text-xs font-bold cursor-pointer" title="Delete Batch">
+              <span class="material-symbols-outlined text-[16px] align-middle">delete</span>
+            </button>
+          </div>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Update dynamic guidance based on most critical crop
+    const highestRiskCrop = crops.reduce((max, c) => (c.bioStatus && c.bioStatus.riskScore > (max.bioStatus ? max.bioStatus.riskScore : 0)) ? c : max, crops[0]);
+    if (highestRiskCrop && highestRiskCrop.bioStatus) {
+      document.getElementById("ai-guidance-badge").innerHTML = `<span class="material-symbols-outlined text-[16px]">priority_high</span> LOT: ${highestRiskCrop.batchCode} (${highestRiskCrop.cropName})`;
+      document.getElementById("ai-guidance-text").innerText = highestRiskCrop.bioStatus.recommendedAction;
+      document.getElementById("ai-guidance-intro").innerText = `Synthesized for ${highestRiskCrop.cropName} stored at ${highestRiskCrop.temperatureC}°C (${highestRiskCrop.bioStatus.factors.q10_multiplier}x respiration).`;
+    }
+  }
+
+  function openCropModal() {
+    document.getElementById("new-crop-batch").value = "#BATCH-" + Math.floor(1000 + Math.random() * 9000);
+    document.getElementById("cropModal").classList.remove("hidden");
+  }
+
+  function closeCropModal() {
+    document.getElementById("cropModal").classList.add("hidden");
+  }
+
+  function openFreshnessModal() {
+    document.getElementById("freshnessModal").classList.remove("hidden");
+  }
+
+  function closeFreshnessModal() {
+    document.getElementById("freshnessModal").classList.add("hidden");
+  }
+
+  function handleRealCropSubmit(e) {
+    e.preventDefault();
+    activeUser = window.AgriShieldAPI.getCurrentUser();
+    const userId = activeUser ? activeUser.id : "guest";
+
+    const cropData = {
+      cropName: document.getElementById("new-crop-name").value,
+      batchCode: document.getElementById("new-crop-batch").value,
+      quantityTons: document.getElementById("new-crop-qty").value,
+      storageDurationHours: document.getElementById("new-crop-hours").value,
+      temperatureC: document.getElementById("new-crop-temp").value,
+      humidityPct: document.getElementById("new-crop-hum").value,
+      storageType: document.getElementById("new-crop-storage").value,
+      storageLocation: document.getElementById("new-crop-location").value,
+      isSurplus: document.getElementById("new-crop-surplus").checked
+    };
+
+    window.AgriShieldAPI.saveUserCrop(userId, cropData);
+    closeCropModal();
+    renderInventoryTable();
+  }
+
+  function removeCrop(cropId) {
+    if (confirm("Are you sure you want to remove this batch from your inventory?")) {
+      activeUser = window.AgriShieldAPI.getCurrentUser();
+      const userId = activeUser ? activeUser.id : "guest";
+      window.AgriShieldAPI.deleteUserCrop(userId, cropId);
+      renderInventoryTable();
+    }
+  }
+
+  function toggleSurplus(cropId) {
+    activeUser = window.AgriShieldAPI.getCurrentUser();
+    const userId = activeUser ? activeUser.id : "guest";
+    window.AgriShieldAPI.toggleCropSurplus(userId, cropId);
+    renderInventoryTable();
+  }
+
+  function quickAssess(crop, temp, hum, storage, hours) {
+    document.getElementById("assess-crop").value = crop;
+    document.getElementById("assess-temp").value = temp;
+    document.getElementById("assess-humidity").value = hum;
+    document.getElementById("assess-storage").value = storage;
+    document.getElementById("assess-hours").value = hours;
+    openFreshnessModal();
+    runFreshnessAssessment();
+  }
+
+  async function runFreshnessAssessment() {
+    const btn = document.getElementById("btn-run-assessment");
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Evaluating...`;
+
+    const crop = document.getElementById("assess-crop").value;
+    const temp = parseFloat(document.getElementById("assess-temp").value);
+    const hum = parseFloat(document.getElementById("assess-humidity").value);
+    const storage = document.getElementById("assess-storage").value;
+    const hours = parseFloat(document.getElementById("assess-hours").value);
+    const qty = parseFloat(document.getElementById("assess-qty").value);
+
+    const bio = window.AgriShieldAPI.calculateBiologicalFreshness({
+      cropName: crop,
+      temperatureC: temp,
+      humidityPct: hum,
+      storageType: storage,
+      storageDurationHours: hours,
+      cropQuantityKg: qty
+    });
+
+    btn.disabled = false;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">calculate</span> Run AI Assessment`;
+
+    const resBox = document.getElementById("assessment-result");
+    resBox.classList.remove("hidden");
+
+    document.getElementById("res-score").innerText = `${bio.riskScore}%`;
+    document.getElementById("res-source").innerText = "Biochemical Q10 Kinetics & VPD Model";
+    document.getElementById("res-action").innerText = bio.recommendedAction;
+    document.getElementById("res-hours").innerText = `${bio.remainingHours} hours`;
+    document.getElementById("res-q10").innerText = `${bio.factors.q10_multiplier}x respiration acceleration`;
+
+    const badge = document.getElementById("res-badge");
+    badge.innerText = `${bio.riskCategory} Risk`;
+    if (bio.riskCategory === "Critical") {
+      badge.className = "px-space-sm py-0.5 rounded-full text-xs font-bold bg-error text-on-error";
+    } else if (bio.riskCategory === "High") {
+      badge.className = "px-space-sm py-0.5 rounded-full text-xs font-bold bg-orange-100 text-orange-800";
+    } else if (bio.riskCategory === "Moderate") {
+      badge.className = "px-space-sm py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800";
+    } else {
+      badge.className = "px-space-sm py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800";
+    }
+  }
+
+  function saveSimulatedBatch() {
+    activeUser = window.AgriShieldAPI.getCurrentUser();
+    const userId = activeUser ? activeUser.id : "guest";
+
+    const cropData = {
+      cropName: document.getElementById("assess-crop").value,
+      batchCode: "#BATCH-" + Math.floor(1000 + Math.random() * 9000),
+      quantityTons: (parseFloat(document.getElementById("assess-qty").value) / 1000).toFixed(1),
+      storageDurationHours: document.getElementById("assess-hours").value,
+      temperatureC: document.getElementById("assess-temp").value,
+      humidityPct: document.getElementById("assess-humidity").value,
+      storageType: document.getElementById("assess-storage").value,
+      storageLocation: "Simulated Field Facility",
+      isSurplus: false
+    };
+
+    window.AgriShieldAPI.saveUserCrop(userId, cropData);
+    closeFreshnessModal();
+    renderInventoryTable();
+    alert("Batch successfully added to your inventory!");
+  }
+
+  function acceptBuyerBid(buyerName, rate) {
+    alert(`Contract accepted with ${buyerName} at ${rate}. Escrow account opened and transportation coordinator alerted.`);
+  }
+
+  function toggleNotifications() {
+    const dropdown = document.getElementById("notif-dropdown");
+    dropdown.classList.toggle("hidden");
+  }
+
+  function clearNotifs() {
+    document.getElementById("notif-list").innerHTML = '<div class="text-center py-2 text-on-surface-variant">No active alerts</div>';
+    document.getElementById("notif-badge").classList.add("hidden");
+  }
+</script>
+</body></html>
