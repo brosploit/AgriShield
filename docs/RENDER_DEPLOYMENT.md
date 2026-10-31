@@ -54,7 +54,7 @@ If you prefer to configure the service manually through Render's dashboard:
 2. Set:
    - **Name:** `agrishield-postgres`
    - **Database:** `agrishield`
-   - **User:** `postgres`
+   - **User:** `agrishield_user`
    - **Region:** *Choose closest to your users (e.g. Oregon or Frankfurt)*
    - **Plan:** **Free**
 3. Click **Create Database**.

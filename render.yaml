@@ -31,5 +31,5 @@ databases:
     plan: free
     region: oregon
     databaseName: agrishield
-    user: postgres
+    user: agrishield_user
 
