@@ -38,6 +38,7 @@
 - [Quick Start](#-quick-start)
 - [Testing & Quality Assurance](#-automated-testing)
 - [Docker Deployment](#-docker-multi-container-deployment)
+- [Render Cloud Deployment](#-render-cloud-deployment)
 - [Demo Credentials](#-demonstration-credentials)
 - [Project Directory Layout](#-directory-layout)
 - [Technical Documentation Hub](#-technical-documentation)
@@ -306,6 +307,31 @@ docker-compose up --build -d
 
 ---
 
+## ☁️ Render Cloud Deployment
+
+Deploy the entire application (Backend API + Interactive Web Frontend + PostgreSQL) to [Render.com](https://render.com) for production or live demonstration. Detailed steps are in [`docs/RENDER_DEPLOYMENT.md`](docs/RENDER_DEPLOYMENT.md).
+
+### Option 1: 1-Click Infrastructure Blueprint (`render.yaml`)
+1. Push your code to GitHub.
+2. In [Render Dashboard](https://dashboard.render.com), click **New +** -> **Blueprint**.
+3. Select your `AgriHub` repository. Render detects [`render.yaml`](render.yaml) automatically.
+4. Click **Apply**. Render will provision:
+   - A free managed PostgreSQL database (`agrishield-db`).
+   - A free web service running `python run.py`.
+   - Your live public URL: `https://agrishield-ai.onrender.com/`.
+
+### Option 2: Manual Web Service
+- **Build Command:** `pip install --upgrade pip && pip install -r requirements.txt`
+- **Start Command:** `python run.py`
+- **Environment Variables:**
+  - `PYTHON_VERSION`: `3.12.8`
+  - `ENVIRONMENT`: `production`
+  - `DEBUG`: `false`
+  - `SECRET_KEY`: `(32+ character random string)`
+  - `DATABASE_URL`: `(Render PostgreSQL connection string, or leave empty for SQLite)`
+
+---
+
 ## 👥 Demonstration Credentials
 
 Pre-seeded accounts for testing and role-based evaluation:
@@ -326,6 +352,8 @@ Pre-seeded accounts for testing and role-based evaluation:
 AgriHub/
 │
 ├── requirements.txt                            # Root dependencies (FastAPI, ML, Tests, Docs)
+├── run.py                                      # Unified local & cloud runner (handles $PORT)
+├── render.yaml                                 # Render.com Infrastructure Blueprint
 ├── mkdocs.yml                                  # Material for MkDocs configuration
 │
 ├── frontend/                                   # Interactive Stitch Web Application
@@ -374,7 +402,8 @@ AgriHub/
 │   ├── ML_AND_AGRONOMIC_MODELS.md              # Biochemical math (Q10/VPD) & ML training
 │   ├── FRONTEND_GUIDE.md                       # Stitch design tokens & component guide
 │   ├── DEPENDENCIES.md                         # Comprehensive dependency matrix & profiles
-│   └── DEPLOYMENT_GUIDE.md                     # Production setup, Docker & environment vars
+│   ├── DEPLOYMENT_GUIDE.md                     # Production setup, Docker & environment vars
+│   └── RENDER_DEPLOYMENT.md                    # Render.com cloud deployment & blueprint guide
 │
 ├── DEVELOPMENT_STATUS.md                       # Engineering status & verification report
 └── .gitignore                                  # Git exclusion rules
@@ -393,6 +422,7 @@ Explore the comprehensive technical guides in the [`docs/`](docs/) directory:
 - 🎨 **[Frontend Design System (`docs/FRONTEND_GUIDE.md`)](docs/FRONTEND_GUIDE.md)** — Stitch design tokens, interactive modal workflows, and responsive layout.
 - 📦 **[Dependencies & Environment Guide (`docs/DEPENDENCIES.md`)](docs/DEPENDENCIES.md)** — Detailed package catalog, version matrix, and installation profiles.
 - 🚀 **[Deployment & Operations Guide (`docs/DEPLOYMENT_GUIDE.md`)](docs/DEPLOYMENT_GUIDE.md)** — Docker setup, PostgreSQL configuration, and environment variables.
+- ☁️ **[Render Cloud Deployment Guide (`docs/RENDER_DEPLOYMENT.md`)](docs/RENDER_DEPLOYMENT.md)** — 1-Click Render blueprint (`render.yaml`), PostgreSQL, and public URLs.
 
 ### 🌐 Serving Documentation Locally (MkDocs)
 

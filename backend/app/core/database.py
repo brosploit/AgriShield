@@ -10,16 +10,25 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from app.core.config import settings
 
 # Engine configuration
+raw_db_url = settings.DATABASE_URL
+# Normalize Render/Heroku legacy 'postgres://' to SQLAlchemy 2.0 compatible 'postgresql+psycopg2://'
+if raw_db_url.startswith("postgres://"):
+    db_url = raw_db_url.replace("postgres://", "postgresql+psycopg2://", 1)
+elif raw_db_url.startswith("postgresql://") and not raw_db_url.startswith("postgresql+"):
+    db_url = raw_db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
+else:
+    db_url = raw_db_url
+
 connect_args = {}
-if settings.DATABASE_URL.startswith("sqlite"):
+if db_url.startswith("sqlite"):
     connect_args = {"check_same_thread": False}
     engine = create_engine(
-        settings.DATABASE_URL,
+        db_url,
         connect_args=connect_args,
     )
 else:
     engine = create_engine(
-        settings.DATABASE_URL,
+        db_url,
         pool_pre_ping=True,
         pool_size=10,
         max_overflow=20,

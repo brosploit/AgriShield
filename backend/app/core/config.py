@@ -19,8 +19,8 @@ class Settings(BaseSettings):
     DEBUG: bool = True
 
     # Database connection string
-    # Defaults to local PostgreSQL, supports SQLite for testing
-    DATABASE_URL: str = "postgresql+psycopg2://postgres@127.0.0.1:5433/agrishield"
+    # Defaults to SQLite, overridden by PostgreSQL via environment variable or .env
+    DATABASE_URL: str = "sqlite:///./agrishield.db"
     TEST_DATABASE_URL: str = "sqlite:///./test_agrishield.db"
 
     # Security & JWT Tokens

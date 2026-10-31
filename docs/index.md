@@ -14,6 +14,7 @@ Welcome to the technical documentation for **AgriShield AI**, a modular platform
 | **[Frontend Design System](FRONTEND_GUIDE.md)** | Stitch design tokens, color palette, typography (`Plus Jakarta Sans` / `Inter`), page walkthroughs, and offline simulation. |
 | **[Dependencies & Environment](DEPENDENCIES.md)** | Python dependency catalog, installation profiles, version constraints, and verification scripts. |
 | **[Deployment & Operations](DEPLOYMENT_GUIDE.md)** | Local development, Alembic database migrations, Docker multi-container stack, and production scaling. |
+| **[Render Cloud Deployment](RENDER_DEPLOYMENT.md)** | 1-Click Blueprint (`render.yaml`), Render PostgreSQL setup, environment variables, and live verification. |
 
 ---
 

@@ -4,11 +4,11 @@
  * and seamless fallback when running offline or standalone.
  */
 
-const API_BASE = window.location.port === "8000" 
+const API_BASE = window.location.protocol.startsWith("http") 
   ? "/api/v1" 
   : "http://localhost:8000/api/v1";
 
-const HEALTH_URL = window.location.port === "8000" 
+const HEALTH_URL = window.location.protocol.startsWith("http") 
   ? "/health" 
   : "http://localhost:8000/health";
 

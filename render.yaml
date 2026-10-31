@@ -1,0 +1,35 @@
+# Render.com Infrastructure Blueprint for AgriShield AI
+# Deploy with 1-click via Render Dashboard -> Blueprints -> Connect Repository
+
+services:
+  - type: web
+    name: agrishield-ai
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python run.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: agrishield-db
+          property: connectionString
+      - key: STORAGE_HASH_SALT
+        value: agrishield-grain-verification-salt-2026
+
+databases:
+  - name: agrishield-db
+    plan: free
+    region: oregon
+    databaseName: agrishield
+    user: postgres
+

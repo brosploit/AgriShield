@@ -53,4 +53,5 @@ nav:
   - Frontend Design System: FRONTEND_GUIDE.md
   - Dependencies & Environment: DEPENDENCIES.md
   - Deployment & Operations: DEPLOYMENT_GUIDE.md
+  - Render Cloud Deployment: RENDER_DEPLOYMENT.md
 
